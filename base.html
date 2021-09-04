@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js" lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Base</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="stylesheet" type="text/css" href="https://framework-gb.cdn.gob.mx/qa/assets/styles/main.css">
+  </head>
+  <body>
+
+    <main class="page">
+
+      <nav class="navbar navbar-inverse sub-navbar navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#subenlaces">
+              <span class="sr-only">Interruptor de Navegación</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">CETIS 145</a>
+          </div>
+          <div class="collapse navbar-collapse" id="subenlaces">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Enlace 1</a></li>
+              <li><a href="#">Enlace 2</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container top-buffer-submenu">
+        <section>
+          <div class="row">
+            <p></p>
+            <div class="col-sm-8">
+              <h3>Título 1</h3>
+              <hr class="red">
+            </div>
+          </div>
+        </section> 
+        
+      </div>
+
+    </main>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Ejemplo de ventana modal de confirmación</h4>
+          </div>
+          <div class="modal-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consectetur libero id gravida volutpat. Nunc mauris lorem, sodales eu suscipit id, fermentum vitae neque.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
+    <script src="https://framework-gb.cdn.gob.mx/assets/scripts/jquery-ui-datepicker.js"></script>
+
+    <script type="text/javascript">
+      $gmx(document).ready(function(){
+        $.datepicker.regional.es = {
+          closeText: 'Cerrar',
+          prevText: 'Ant',
+          nextText: 'Sig',
+          currentText: 'Hoy',
+          monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+          monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+          dayNames: ['Domingo','Lunes','Martes','Mi&eacute;rcoles','Jueves','Viernes','S&aacute;bado'],
+          dayNamesShort: ['Dom','Lun','Mar','Mi&eacute;','Juv','Vie','S&aacute;b'],
+          dayNamesMin: ['Dom','Lun','Mar','Mie','Jue','Vie','S&aacute;b'],
+          weekHeader: 'Sm',
+          dateFormat: 'dd/mm/yy',
+          firstDay: 1,
+          isRTL: false,
+          showMonthAfterYear: false,
+          yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional.es);
+        $( "#calendar1" ).datepicker();
+        $( "#calendar2" ).datepicker();
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+
+</body>
+</html>
