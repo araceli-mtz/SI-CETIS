@@ -14,8 +14,8 @@
 	<link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
 	
 	<link href="css/estilos-ambikon.css" rel="stylesheet">
-	
-	<!-- Childs load -->
+	<!-- Icons -->
+	<link href="https://plantel.ambikon.com.mx/assets/css/icons.css" rel="stylesheet">
 
 	<!-- JQuerry CDN -->
 	<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
@@ -48,1520 +48,190 @@
 			</div>
 
 		</nav>
-		<div class="container">
 
+		<div class="container">
 
 			<div class="row">
 				<div class="col-lg-8 col-md-6 col-sm-6">
 					<ol class="breadcrumb" aria-label="historial de navegación">
 						<li><a href="#"><i class="icon icon-home"></i></a></li>
 						<li><a href="#" aria-label="enlace a inicio">Inicio</a></li>
-						<li class=active><a href="#" role="button" aria-label="enlace a Registro en línea"> Registro en
-								línea </a></li>
+						<li class=active><a href="#" role="button" aria-label="enlace a Registro en línea"> Registro en línea </a></li>
 					</ol>
 				</div>
 			</div>
+
 			<div class="row">
 				<div class="col-md-12">
-
-					<div class="mensajes" id="alertas">
-					</div>
+					<div class="mensajes" id="alertas"></div>
 
 					<h2> Registro en línea - Aspirantes </h2>
 					<hr class="red initial"/>
 
-
-					<!-- LOAD WIZARD STEPS -->
+					<!-- Progreso de Registro -->
 					<ul class="wizard-steps-extensive" id="wizard-steps">
 						<li data-text="step" class="completed">
-							<h5>1</h5>
-							<span>Información general</span>
+							<h5>1</h5><span>Información general</span>
 						</li>
 						<li data-text="step" class="">
-							<h5>2</h5>
-							<span>Domicilio</span>
+							<h5>2</h5><span>Domicilio</span>
 						</li>
 						<li data-text="step" class="">
-							<h5>3</h5>
-							<span>Información del padre, madre o tutor</span>
+							<h5>3</h5><span>Información del padre, madre o tutor</span>
 						</li>
 						<li data-text="step" class="">
-							<h5>4</h5>
-							<span>Secundaria de procedencia</span>
+							<h5>4</h5><span>Secundaria de procedencia</span>
 						</li>
 						<li data-text="step" class="">
-							<h5>5</h5>
-							<span>Selecciona tu carrera o especialidad</span>
+							<h5>5</h5><span>Selecciona tu carrera o especialidad</span>
 						</li>
 						<li id="status">
 							<i class="glyphicon glyphicon-ok-circle"></i>
 						</li>
 					</ul>
-					<form action="https://www.cetis43.edu.mx/index.php/aspirantes/registro" id="tramite" method="post"
-						accept-charset="utf-8">
-						<input type="hidden" name="csrf_token" value="11e04a62a96f6e0eeac60d9a8facd1a0" />
 
-
+					<form action="" id="" method=""accept-charset="utf-8">
+						
 						<!-- INFORMACIÓN GENERAL -->
 						<section class="tabs-step">
 
-							<h3>Información general del aspirante</h3>
+							<h3>Datos Generales del Aspirante</h3>
 							<hr class="blue">
 
 							<div class="row">
 								<div class="col-md-4">
-
 									<div class="form-group">
-
-										<label class="control-label" for="curp">
-
-											CURP
-											*:
-
-
-										</label>
-
+										<label class="control-label" for="curp">CURP*:</label>
 										<div class="input-group">
 											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="aspirante[curp]" value="" id="curp"
-												placeholder="Ingresa la CURP" maxlength="18"
-												data-validation="required custom server"
-												data-validation-regexp="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
-												data-sanitize="upper"
-												data-validation-url="https://www.cetis43.edu.mx/api/aspirantes/unique/field/curp"
-												data-validation-param-name="curp" class="form-control" />
-
+											<input type="text" name="aspirante[curp]" value="" id="curp" data-validation="required" placeholder="Ingresa la CURP" maxlength="18" class="form-control"/>
 										</div>
-
-										<br>
-										<a type="button" class="btn btn-default btn-sm" href="https://www.gob.mx/curp/"
-											target="_blank">
-											<span class="glyphicon glyphicon-search"></span>
-											Consulta tu curp
-										</a>
-
 									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="nombre">
-
-											Nombre
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="aspirante[nombre]" value="" id="nombre"
-												placeholder="Ingresa el nombre" maxlength="50"
-												data-validation="required custom"
-												data-validation-regexp="^[a-z-A-Z\D]+$" data-sanitize="upper"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="apellido_paterno">
-
-											Apellido paterno
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="aspirante[apellido_paterno]" value=""
-												id="apellido_paterno" placeholder="Ingresa el apellido paterno"
-												maxlength="50" data-validation="required custom"
-												data-validation-regexp="^[a-z-A-Z\D]+$" data-sanitize="upper"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="col-md-4">
-
 									<div class="form-group">
-
-										<label class="control-label" for="apellido_materno">
-
-											Apellido materno
-											*:
-
-
-										</label>
-
+										<label class="control-label" for="nombre">Nombre*:</label>
 										<div class="input-group">
 											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="aspirante[apellido_materno]" value=""
-												id="apellido_materno" placeholder="Ingresa el apellido materno"
-												maxlength="50" data-validation="required custom"
-												data-validation-regexp="^[a-z-A-Z\D]+$" data-sanitize="upper"
-												class="form-control" />
-
+											<input type="text" name="nombre" value="" id="nombre" data-validation="required" placeholder="Ingresa el nombre" maxlength="50" class="form-control"/>
 										</div>
-
-
 									</div>
-
 								</div>
 								<div class="col-md-4">
-
 									<div class="form-group">
-
-										<label class="control-label" for="sexo">
-
-											Sexo
-											*:
-
-
-										</label>
-
+										<label class="control-label" for="ap_paterno">Apellido Paterno*:</label>
 										<div class="input-group">
-											<span class="input-group-addon icon-font-male-female"
-												aria-hidden="true"></span>
-											<select id="sexo" name="aspirante[sexo]" data-validation="required"
-												class="form-control">
+											<span class="input-group-addon icon-user" aria-hidden="true"></span>
+											<input type="text" name="ap_paterno" value="" id="ap_paterno" data-validation="required" placeholder="Ingresa el apellido paterno" maxlength="50" class="form-control"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="ap_materno">Apellido Materno*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-user" aria-hidden="true"></span>
+											<input type="text" name="ap_materno" value="" id="ap_materno" data-validation="required" placeholder="Ingresa el apellido materno" maxlength="50" class="form-control"/>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="date">Fecha de nacimiento*:</label>
+										<div class="input-group">
+										<span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
+										<input type="text" name="date" value="" id="date" placeholder="Selecciona tu fecha de nacimiento" data-validation="required date" data-validation-format="yyyy-mm-dd" class="form-control"/>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="">Estado de nacimiento*:</label>
+											<div class="input-group">
+											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
+											<select id="estado" name="estado" data-validation="required" class="form-control">
+												<option value="">Seleccione su estado</option>
+												<option value="1">1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="">Municipio de nacimiento*:</label>
+											<div class="input-group">
+											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
+											<select id="estado" name="estado" data-validation="required" class="form-control">
+												<option value="">Seleccione su municipio</option>
+												<option value="1">1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sexo">Sexo*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-male-female" aria-hidden="true"></span>
+											<select id="sexo" name="sexo" data-validation="required" class="form-control">
 												<option value="">Selecciona una opción</option>
-												<option value="HOMBRE">HOMBRE</option>
-												<option value="MUJER">MUJER</option>
+												<option value="1">HOMBRE</option>
+												<option value="2">MUJER</option>
 											</select>
-
 										</div>
-
-
 									</div>
-
 								</div>
+
+								
+								<div class="col-md-4" >
+									<div class="form-group">
+										<label class="control-label" for="">Correo electrónico*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-envelope" aria-hidden="true" ></span>
+											<input type="text" name="correo" value="" id="correo" placeholder="Ingresa tu correo electrónico" data-validation="required email" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
 								<div class="col-md-4">
 
 									<div class="form-group">
-
-										<label class="control-label" for="estado_civil">
-
-											Estado civil
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-torso" aria-hidden="true"></span>
-											<select id="estado_civil" name="aspirante[estado_civil]"
-												data-validation="required" class="form-control">
-												<option value="">Selecciona una opción</option>
-												<option value="SOLTERO">SOLTERO</option>
-												<option value="CASADO">CASADO</option>
-												<option value="UNIÓN LIBRE">UNIÓN LIBRE</option>
-											</select>
-
-										</div>
-
-
+										<label class="control-label" for="telefono">Número de teléfono*:</label>
+											<div class="input-group">
+												<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
+												<input type="text" name="telefono" value="" id="telefono" placeholder="Ingresa tu número telefónico" maxlength="10"
+														data-validation="required number" class="form-control"/>
+											</div>
 									</div>
-
 								</div>
+
 							</div>
 
+							<!-- BOTONES -->
 							<div class="row">
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="correo">
-
-											Correo electrónico
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-envelope"
-												aria-hidden="true"></span>
-											<input type="text" name="aspirante[correo]" value="" id="correo"
-												placeholder="Ingresa tu correo electrónico"
-												data-validation="required email" class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="date">
-
-											Fecha de nacimiento
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-calendar-o"
-												aria-hidden="true"></span>
-											<input type="text" name="aspirante_nacimiento[fecha]" value="" id="date"
-												placeholder="Selecciona tu fecha de nacimiento"
-												data-validation="required date" data-validation-format="yyyy-mm-dd"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="estado_aspirante_nacimiento">
-
-											Estado de nacimiento
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-location-arrow"
-												aria-hidden="true"></span>
-											<select id="estado_aspirante_nacimiento"
-												name="aspirante_nacimiento[estado_id]" data-validation="required"
-												onchange="datos_nacimiento(this.value)" class="form-control">
-												<option value="">Selecciona un estado</option>
-												<option value="1">Aguascalientes</option>
-												<option value="2">Baja California</option>
-												<option value="3">Baja California Sur</option>
-												<option value="4">Campeche</option>
-												<option value="5">Coahuila de Zaragoza</option>
-												<option value="6">Colima</option>
-												<option value="7">Chiapas</option>
-												<option value="8">Chihuahua</option>
-												<option value="9">Distrito Federal</option>
-												<option value="10">Durango</option>
-												<option value="11">Guanajuato</option>
-												<option value="12">Guerrero</option>
-												<option value="13">Hidalgo</option>
-												<option value="14">Jalisco</option>
-												<option value="15">México</option>
-												<option value="16">Michoacán de Ocampo</option>
-												<option value="17">Morelos</option>
-												<option value="18">Nayarit</option>
-												<option value="19">Nuevo León</option>
-												<option value="20">Oaxaca</option>
-												<option value="21">Puebla</option>
-												<option value="22">Querétaro</option>
-												<option value="23">Quintana Roo</option>
-												<option value="24">San Luis Potosí</option>
-												<option value="25">Sinaloa</option>
-												<option value="26">Sonora</option>
-												<option value="27">Tabasco</option>
-												<option value="28">Tamaulipas</option>
-												<option value="29">Tlaxcala</option>
-												<option value="30">Veracruz de Ignacio de la Llave</option>
-												<option value="31">Yucatán</option>
-												<option value="32">Zacatecas</option>
-												<option value="33">Otro</option>
-											</select>
-
-										</div>
-
-
-									</div>
-
-								</div>
+								<div class="col-md-8 col-md-offset-4"><hr></div>
 							</div>
-
-							<div class="row">
-								<div class="col-md-4 hidden" id=estado_nombre>
-
-									<div class="form-group">
-
-										<label class="control-label" for="estado_aspirante_nacimiento_nombre">
-
-											Nombre del estado
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-location-arrow"
-												aria-hidden="true"></span>
-											<input type="text" name="aspirante_nacimiento[estado_nombre]" value=""
-												id="estado_aspirante_nacimiento_nombre"
-												placeholder="Ingresa el nombre del estado" data-validation="required"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="municipio_aspirante_nacimiento">
-
-											Municipio de nacimiento
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-location-arrow"
-												aria-hidden="true"></span>
-											<select id="municipio_aspirante_nacimiento"
-												name="aspirante_nacimiento[municipio_id]" data-validation="required"
-												class="form-control">
-												<option value="">Ingresa tu código postal</option>
-											</select>
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4 hidden" id=municipio_nombre>
-
-									<div class="form-group">
-
-										<label class="control-label" for="municipio_aspirante_nacimiento_nombre">
-
-											Nombre del municipio
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-location-arrow"
-												aria-hidden="true"></span>
-											<input type="text" name="aspirante_nacimiento[municipio_nombre]" value=""
-												id="municipio_aspirante_nacimiento_nombre"
-												placeholder="Ingresa el nombre del municipio" data-validation="required"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-							</div>
-
-							<!-- FORM BUTTONS -->
-
-							<div class="row">
-								<div class="col-md-8 col-md-offset-4">
-									<hr>
-								</div>
-							</div>
-
 							<div class="clearfix">
-								<div class="pull-left text-muted text-vertical-align-button">
-									* Campos obligatorios
-								</div>
-
+								<div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
 								<div class="pull-right">
-									<a class="btn btn-link" target="_blank" role="button"
-										aria-label="Abrir enlace privacidad"
-										href="https://www.cetis43.edu.mx/plantel/privacidad">Aviso de privacidad</a>
-									<button type="button" class="btn btn-primary" role="button"
-										aria-label="bottón Siguiente">Siguiente</button>
-
+									<a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
+									<button type="button" class="btn btn-primary" role="button" aria-label="bottón Siguiente">Siguiente</button>
 								</div>
 							</div>
 						</section>
-
-						<!--  DOMICILIO -->
-						<section class="tabs-step">
-
-							<h3>Datos del domicilio actual</h3>
-							<hr class="blue">
-
-							<div class="row">
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="codigo_postal_aspirante">
-
-											Codigo Postal
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-paperclip"
-												aria-hidden="true"></span>
-											<input type="number" name="aspirante_direccion[codigo_postal]" value=""
-												id="codigo_postal_aspirante" placeholder="Código postal" maxlength="5"
-												data-validation="required number length" data-validation-length="5"
-												onkeyup="datos_codigo_postal(this.value, 'aspirante')"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="estado_aspirante">
-
-											Estado
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-location-arrow"
-												aria-hidden="true"></span>
-											<select id="estado_aspirante" name="aspirante_direccion[estado_id]"
-												data-validation="required" class="form-control">
-												<option value="">Ingresa tu código postal</option>
-											</select>
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="municipio_aspirante">
-
-											Municipio
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-location-arrow"
-												aria-hidden="true"></span>
-											<select id="municipio_aspirante" name="aspirante_direccion[municipio_id]"
-												data-validation="required" class="form-control">
-												<option value="">Ingresa tu código postal</option>
-											</select>
-
-										</div>
-
-
-									</div>
-
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="localidad_aspirante">
-
-											Localidad
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-location-arrow"
-												aria-hidden="true"></span>
-											<select id="localidad_aspirante" name="aspirante_direccion[localidad_id]"
-												data-validation="required" class="form-control">
-												<option value="">Ingresa tu código postal</option>
-											</select>
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="colonia_aspirante">
-
-											Asentamiento (Colonia)
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-location-arrow"
-												aria-hidden="true"></span>
-											<input type="text" name="aspirante_direccion[colonia]" value=""
-												id="colonia_aspirante" placeholder="Nombre de tu colonia"
-												maxlength="100" list="asentamiento_aspirante" data-validation="required"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div> <datalist id="asentamiento_aspirante"></datalist>
-
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="direccion">
-
-											Calle y número
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-location-arrow"
-												aria-hidden="true"></span>
-											<input type="text" name="aspirante_direccion[direccion]" value=""
-												id="direccion" placeholder="Ej. Calle Benito Juarez No. 12"
-												maxlength="100" data-validation="required" class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="lada">
-
-											Lada telefónica
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
-											<input type="text" name="aspirante_direccion[lada]" value="" id="lada"
-												placeholder="Ingresa tu lada" maxlength="3"
-												data-validation="required number length" data-validation-length="3"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="telefono">
-
-											Número de teléfono
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
-											<input type="text" name="aspirante_direccion[telefono]" value=""
-												id="telefono" placeholder="Ingresa tu número telefónico" maxlength="7"
-												data-validation="required number length" data-validation-length="7"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="celular">
-
-											Número celular
-											(opcional):
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
-											<input type="text" name="aspirante_direccion[celular]" value="" id="celular"
-												placeholder="Ingresa tu número celular" maxlength="10"
-												data-validation="length number" data-validation-length="10"
-												data-validation-optional="true" class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-							</div>
-
-							<!-- FORM BUTTONS -->
-
-							<div class="row">
-								<div class="col-md-8 col-md-offset-4">
-									<hr>
-								</div>
-							</div>
-
-							<div class="clearfix">
-								<div class="pull-left text-muted text-vertical-align-button">
-									* Campos obligatorios
-								</div>
-
-								<div class="pull-right">
-									<a class="btn btn-link" target="_blank" role="button"
-										aria-label="Abrir enlace privacidad"
-										href="https://www.cetis43.edu.mx/plantel/privacidad">Aviso de privacidad</a>
-									<button type="button" class="btn btn-default" role="button"
-										aria-label="bottón Atras">Atras</button>
-
-									<button type="button" class="btn btn-primary" role="button"
-										aria-label="bottón Siguiente">Siguiente</button>
-
-								</div>
-							</div>
-						</section>
-
-						<!-- INFORMACIÓN DEL padre, madre o tutor -->
-						<section class="tabs-step">
-
-							<h3>Información del padre, madre o tutor</h3>
-							<hr class="blue">
-
-							<div class="row">
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="aspirante_tutor[nombre]">
-
-											Nombre del padre, madre o tutor
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="aspirante_tutor[nombre]" value=""
-												id="aspirante_tutor[nombre]" placeholder="Ingresa el nombre"
-												maxlength="50" data-validation="required custom"
-												data-validation-regexp="^[a-z-A-Z\D]+$" data-sanitize="upper"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="aspirante_tutor[apellido_paterno]">
-
-											Apellido paterno del padre, madre o tutor
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="aspirante_tutor[apellido_paterno]" value=""
-												id="aspirante_tutor[apellido_paterno]"
-												placeholder="Ingresa el apellido paterno" maxlength="50"
-												data-validation="required custom"
-												data-validation-regexp="^[a-z-A-Z\D]+$" data-sanitize="upper"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="aspirante_tutor[apellido_materno]">
-
-											Apellido materno del padre, madre o tutor
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="aspirante_tutor[apellido_materno]" value=""
-												id="aspirante_tutor[apellido_materno]"
-												placeholder="Ingresa el apellido materno" maxlength="50"
-												data-validation="required custom"
-												data-validation-regexp="^[a-z-A-Z\D]+$" data-sanitize="upper"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="lada_tutor">
-
-											Lada telefónica
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
-											<input type="text" name="aspirante_tutor_direccion[lada]" value=""
-												id="lada_tutor" placeholder="Ingresa el número de lada" maxlength="3"
-												data-validation="required number length" data-validation-length="3"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="telefono_tutor">
-
-											Número de teléfono particular
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
-											<input type="text" name="aspirante_tutor_direccion[telefono]" value=""
-												id="telefono_tutor" placeholder="Ingresa el número telefónico"
-												maxlength="7" data-validation="required number length"
-												data-validation-length="7" class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="celular_tutor">
-
-											Número de celular
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
-											<input type="text" name="aspirante_tutor_direccion[celular]" value=""
-												id="celular_tutor" placeholder="Ingresa el número celular"
-												maxlength="10" data-validation="required number length"
-												data-validation-length="10" class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-							</div>
-
-							<div class="row md-toolbar">
-								<div class="col-md-12 inline">
-									<h5>
-										<span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-										(OPCIONAL) Marcar en caso de que tu padre, madre o tutor viva separado de tí
-									</h5>
-									&nbsp;
-									<div class="checkbox" style="display: inline-grid; padding: 0; margin: 0;">
-										<label>
-											<input type="checkbox" name="direccion_diferente" id="direccion_diferente"
-												value="1" onclick="display_div(this.id)"
-												aria-label="casilla de respuesta">
-											<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"
-													aria-hidden="true"></i></span>
-										</label>
-									</div>
-								</div>
-							</div>
-							<div class="row hidden" id="direccion_diferente_content">
-
-								<div class="row">
-									<div class="col-md-4">
-
-										<div class="form-group">
-
-											<label class="control-label" for="codigo_postal_tutor">
-
-												Codigo Postal
-												*:
-
-
-											</label>
-
-											<div class="input-group">
-												<span class="input-group-addon icon-font-paperclip"
-													aria-hidden="true"></span>
-												<input type="number" name="aspirante_tutor_direccion[codigo_postal]"
-													value="" id="codigo_postal_tutor" placeholder="Código postal"
-													maxlength="5" data-validation="required number length"
-													data-validation-length="5"
-													onkeyup="datos_codigo_postal(this.value, 'tutor')"
-													class="form-control" />
-
-											</div>
-
-
-										</div>
-
-									</div>
-									<div class="col-md-4">
-
-										<div class="form-group">
-
-											<label class="control-label" for="estado_tutor">
-
-												Estado
-												*:
-
-
-											</label>
-
-											<div class="input-group">
-												<span class="input-group-addon icon-font-location-arrow"
-													aria-hidden="true"></span>
-												<select id="estado_tutor" name="aspirante_tutor_direccion[estado_id]"
-													data-validation="required" class="form-control">
-													<option value="">Ingresa tu código postal</option>
-												</select>
-
-											</div>
-
-
-										</div>
-
-									</div>
-									<div class="col-md-4">
-
-										<div class="form-group">
-
-											<label class="control-label" for="municipio_tutor">
-
-												Municipio
-												*:
-
-
-											</label>
-
-											<div class="input-group">
-												<span class="input-group-addon icon-font-location-arrow"
-													aria-hidden="true"></span>
-												<select id="municipio_tutor"
-													name="aspirante_tutor_direccion[municipio_id]"
-													data-validation="required" class="form-control">
-													<option value="">Ingresa tu código postal</option>
-												</select>
-
-											</div>
-
-
-										</div>
-
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-md-4">
-
-										<div class="form-group">
-
-											<label class="control-label" for="localidad_tutor">
-
-												Localidad
-												*:
-
-
-											</label>
-
-											<div class="input-group">
-												<span class="input-group-addon icon-font-location-arrow"
-													aria-hidden="true"></span>
-												<select id="localidad_tutor"
-													name="aspirante_tutor_direccion[localidad_id]"
-													data-validation="required" class="form-control">
-													<option value="">Ingresa tu código postal</option>
-												</select>
-
-											</div>
-
-
-										</div>
-
-									</div>
-									<div class="col-md-4">
-
-										<div class="form-group">
-
-											<label class="control-label" for="colonia_tutor">
-
-												Asentamiento (Colonia)
-												*:
-
-
-											</label>
-
-											<div class="input-group">
-												<span class="input-group-addon icon-font-location-arrow"
-													aria-hidden="true"></span>
-												<input type="text" name="aspirante_tutor_direccion[colonia]" value=""
-													id="colonia_tutor" placeholder="Ingresa el nombre de la colonia"
-													maxlength="100" list="asentamiento_tutor" data-validation="required"
-													class="form-control" />
-
-											</div>
-
-
-										</div>
-
-									</div> <datalist id="asentamiento_tutor"></datalist>
-
-									<div class="col-md-4">
-
-										<div class="form-group">
-
-											<label class="control-label" for="direccion_tutor">
-
-												Calle y número
-												*:
-
-
-											</label>
-
-											<div class="input-group">
-												<span class="input-group-addon icon-font-location-arrow"
-													aria-hidden="true"></span>
-												<input type="text" name="aspirante_tutor_direccion[direccion]" value=""
-													id="direccion_tutor" placeholder="Ingresa la calle y número"
-													maxlength="100" data-validation="required" class="form-control" />
-
-											</div>
-
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<!-- FORM BUTTONS -->
-
-							<div class="row">
-								<div class="col-md-8 col-md-offset-4">
-									<hr>
-								</div>
-							</div>
-
-							<div class="clearfix">
-								<div class="pull-left text-muted text-vertical-align-button">
-									* Campos obligatorios
-								</div>
-
-								<div class="pull-right">
-									<a class="btn btn-link" target="_blank" role="button"
-										aria-label="Abrir enlace privacidad"
-										href="https://www.cetis43.edu.mx/plantel/privacidad">Aviso de privacidad</a>
-									<button type="button" class="btn btn-default" role="button"
-										aria-label="bottón Atras">Atras</button>
-
-									<button type="button" class="btn btn-primary" role="button"
-										aria-label="bottón Siguiente">Siguiente</button>
-
-								</div>
-							</div>
-						</section>
-
-						<!-- SECUNDARIA DE PROCEDENCIA -->
-						<section class="tabs-step">
-
-							<h3>Secundaria de procedencia</h3>
-							<hr class="blue">
-							<p class="text-justify">Si provienes de una secundaria privada y el sistema no la reconoce,
-								ingresa la clave: <b>SECPRIVADA</b>
-								<br>
-								Si provienes de una escuela secundaria extranjera ingresa la clave: <b>XXXXXXXXXX</b>
-							</p>
-
-							<div class="row">
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="aspirante_secundaria">
-
-											Clave de la secundaria
-											*:
-
-											<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip"
-												data-placement="top"
-												title="En caso de ser del extrangero, ingresar: XXXXXXXXXX"
-												data-original-title="En caso de ser del extrangero, ingresar: XXXXXXXXXX">
-											</span>
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-paperclip"
-												aria-hidden="true"></span>
-											<input type="text" name="nombre_secundaria" value=""
-												id="aspirante_secundaria" placeholder="Ingresa la clave de secundaria"
-												maxlength="10" onkeyup="datos_secundaria(this.value)"
-												data-validation="required length" data-validation-length="10"
-												class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<input type="hidden" name="aspirante_secundaria[secundaria_id]" value=""
-									id="id_secundaria" />
-
-
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="tipo_secundaria">
-
-											Tipo de escuela
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-paperclip"
-												aria-hidden="true"></span>
-											<input type="text" name="tipo_secundaria" value="" id="tipo_secundaria"
-												placeholder="Ingresa la clave de secundaria" readOnly="1"
-												data-validation="required" class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="nombre_secundaria">
-
-											Nombre de escuela
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-paperclip"
-												aria-hidden="true"></span>
-											<input type="text" name="nombre_secundaria" value="" id="nombre_secundaria"
-												placeholder="Ingresa la clave de secundaria" readOnly="1"
-												data-validation="required" class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="estado_secundaria">
-
-											Estado
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-paperclip"
-												aria-hidden="true"></span>
-											<input type="text" name="estado_secundaria" value="" id="estado_secundaria"
-												placeholder="Ingresa la clave de secundaria" readOnly="1"
-												data-validation="required" class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="municipio_secundaria">
-
-											Municipio
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-paperclip"
-												aria-hidden="true"></span>
-											<input type="text" name="municipio_secundaria" value=""
-												id="municipio_secundaria" placeholder="Ingresa la clave de secundaria"
-												readOnly="1" data-validation="required" class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="promedio">
-
-											Promedio general
-											*:
-
-											<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip"
-												data-placement="top"
-												title="Debe estar basado en una escala general del 0 al 10"
-												data-original-title="Debe estar basado en una escala general del 0 al 10">
-											</span>
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-paperclip"
-												aria-hidden="true"></span>
-											<input type="number" name="aspirante_secundaria[promedio]" value=""
-												id="promedio" placeholder="Ingresa tu promedio general" step="0.1"
-												data-validation="required number"
-												data-validation-allowing="range[0;10],float" class="form-control" />
-
-										</div>
-
-
-									</div>
-
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="adeuda_materias">
-
-											¿Adeudas materias?
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-user" aria-hidden="true"></span>
-											<select id="adeuda_materias" name="aspirante_secundaria[adeuda_materias]"
-												data-validation="required" class="form-control">
-												<option value="">Selecciona una opción</option>
-												<option value="0">NO</option>
-												<option value="1">SI</option>
-											</select>
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="beca">
-
-											Selecciona tipo de beca
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-user" aria-hidden="true"></span>
-											<select id="beca" name="aspirante_secundaria[beca]"
-												data-validation="required" class="form-control">
-												<option value="">Selecciona una opción</option>
-												<option value="NINGUNA">Ninguna</option>
-												<option value="PROPIA INSTITUCIÓN">Propia institución</option>
-												<option value="INTERCAMBIO">Intercambio</option>
-												<option value="OPORTUNIDADES">Oportunidades</option>
-												<option value="CONTINUACIÓN DE ESTUDIOS">Continuación de estudios
-												</option>
-												<option value="CONTRA EL ABANDONO ESCOLAR">Contra el abandono escolar
-												</option>
-												<option value="DESARROLLO DE COMPETENCIAS">Desarrollo de competencias
-												</option>
-												<option value="ESTUDIANTES CON DISCAPACIDAD">Estudiantes con Alguna
-													Discapacidad</option>
-												<option value="PROBEMS">Probems</option>
-												<option value="SALARIO">Salario</option>
-												<option value="OTRA BECA FEDERAL">Otra beca federal</option>
-												<option value="BECA ESTATAL">Beca estatal</option>
-												<option value="BECA PARTICULAR">Beca particular</option>
-												<option value="BECA INTERNACIONAL">Beca internacional</option>
-												<option value="OTRA">Otra</option>
-											</select>
-
-										</div>
-
-
-									</div>
-
-								</div>
-							</div>
-
-							<!-- FORM BUTTONS -->
-
-							<div class="row">
-								<div class="col-md-8 col-md-offset-4">
-									<hr>
-								</div>
-							</div>
-
-							<div class="clearfix">
-								<div class="pull-left text-muted text-vertical-align-button">
-									* Campos obligatorios
-								</div>
-
-								<div class="pull-right">
-									<a class="btn btn-link" target="_blank" role="button"
-										aria-label="Abrir enlace privacidad"
-										href="https://www.cetis43.edu.mx/plantel/privacidad">Aviso de privacidad</a>
-									<button type="button" class="btn btn-default" role="button"
-										aria-label="bottón Atras">Atras</button>
-
-									<button type="button" class="btn btn-primary" role="button"
-										aria-label="bottón Siguiente">Siguiente</button>
-
-								</div>
-							</div>
-						</section>
-
-						<!-- SELECCIONA TU CARRERA O ESPECIALIDAD -->
-						<section class="tabs-step">
-
-							<h3>Selecciona tu carrera o especialidad</h3>
-							<hr class="blue">
-
-							<div class="row">
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="carrera_id_1">
-
-											Primera opción
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-user" aria-hidden="true"></span>
-											<select id="carrera_id_1" name="aspirante[carrera_id_1]"
-												data-validation="required server"
-												data-validation-url="https://www.cetis43.edu.mx/api/aspirantes/limites/"
-												data-validation-param-name="id_carrera" onfocus="datos_carreras('1')"
-												class="form-control">
-												<option value="">Selecciona una carrera</option>
-											</select>
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="carrera_id_2">
-
-											Segunda opción
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-user" aria-hidden="true"></span>
-											<select id="carrera_id_2" name="aspirante[carrera_id_2]"
-												data-validation="required" onfocus="datos_carreras('2')"
-												class="form-control">
-												<option value="">Selecciona una carrera</option>
-											</select>
-
-										</div>
-
-
-									</div>
-
-								</div>
-								<div class="col-md-4">
-
-									<div class="form-group">
-
-										<label class="control-label" for="carrera_id_3">
-
-											Tercera opción
-											*:
-
-
-										</label>
-
-										<div class="input-group">
-											<span class="input-group-addon icon-font-user" aria-hidden="true"></span>
-											<select id="carrera_id_3" name="aspirante[carrera_id_3]"
-												data-validation="required" onfocus="datos_carreras('3')"
-												class="form-control">
-												<option value="">Selecciona una carrera</option>
-											</select>
-
-										</div>
-
-
-									</div>
-
-								</div>
-							</div>
-
-							<!-- FORM BUTTONS -->
-
-							<div class="row">
-								<div class="col-md-8 col-md-offset-4">
-									<hr>
-								</div>
-							</div>
-
-							<div class="clearfix">
-								<div class="pull-left text-muted text-vertical-align-button">
-									* Campos obligatorios
-								</div>
-
-								<div class="pull-right">
-									<a class="btn btn-link" target="_blank" role="button"
-										aria-label="Abrir enlace privacidad"
-										href="https://www.cetis43.edu.mx/plantel/privacidad">Aviso de privacidad</a>
-									<button type="button" class="btn btn-default" role="button"
-										aria-label="bottón Atras">Atras</button>
-
-									<button type="submit" class="btn btn-primary" role="button"
-										aria-label="bottón Enviar">Enviar</button>
-
-								</div>
-							</div>
-						</section>
-
 					</form>
-
-
 				</div>
 			</div>
 
@@ -1570,22 +240,21 @@
 	</main>
 
 	<div class="site-copyright text-center">
-		<p>Consejería Jurídica del Ejecutivo Federal - Algunos derechos reservados © 2012 - 2021</p>
-		<p>
-			Esquina La Imagen S/N, Col. La Cruz, Xochitepec, Morelos, C.P. 62790
-		</p>
+		<p>Centro de Estudios Tecnológicos Industrial y de Servicios No. 145</p>
+		<p>Av. Las Palmas S/N, Colonia Jardines de Plaza Verde, Martínez de la Torre, Veracruz C.P. 93600</p>
 	</div>
 
 	<!-- Gob mx js -->
-	<!--script src="https://cdn.datos.gob.mx/assets/js/main.js"></script-->
 	<script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
+
 	<!-- bootbox code -->
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
 	<script>
 		// Initialize page URL
-		var base_url = 'https://www.cetis43.edu.mx/';
-		var form_current_url = 'https://www.cetis43.edu.mx/index.php/aspirantes/registro';
+		var base_url = '#';
+		var form_current_url = '#';
+		
 		// $gmx = $;
 		$gmx(document).ready(function () {
 			// Prepare navigation menu
@@ -1618,6 +287,7 @@
 		var api_url = base_url + 'api/aspirantes/';
 		var next_url = base_url + 'aspirantes';
 		var carreras = [{ "id": "1", "clave": "333400001-", "nombre": "CONTABILIDAD", "direccion_url": "contabilidad", "activo": "1" }, { "id": "2", "clave": "353200001-", "nombre": "CONSTRUCCI\u00d3N", "direccion_url": "mantenimiento_industrial", "activo": "1" }, { "id": "3", "clave": "344100002-", "nombre": "PROGRAMACI\u00d3N", "direccion_url": "programacion", "activo": "1" }, { "id": "4", "clave": "321300002-", "nombre": "MEDIOS DE COMUNICACI\u00d3N", "direccion_url": "trabajo_social", "activo": "1" }, { "id": "5", "clave": "351700001-", "nombre": "SOPORTE Y MANTENIMIENTO", "direccion_url": "mantenimiento_de_computo", "activo": "1" }, { "id": "6", "clave": "371400001-", "nombre": "LABORATORISTA CLINICO", "direccion_url": "laboratorio_clinico", "activo": "1" }]
+		
 		$gmx(document).ready(function () {
 			// Date calendar initialize
 			$('#date').datepicker({
@@ -1627,16 +297,12 @@
 				yearRange: '-60:-10',
 			});
 		});
-
-
 	</script>
 
 	<!-- Load form JS -->
 	<script src="https://plantel.ambikon.com.mx/assets/js/form_utils.js"></script>
 	<script src="https://plantel.ambikon.com.mx/assets/js/form_steps.js"></script>
 	<script src="https://plantel.ambikon.com.mx/assets/js/form_validate.js"></script>
-
-
 </body>
 
 </html>
