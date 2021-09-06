@@ -162,6 +162,13 @@ ol.breadcrumb, div.time {
     margin-top: 15px;
 }
 
+ol.breadcrumb{
+    padding: 10px;
+}
+
+.breadcrumb {
+    margin-bottom: 0px;
+}
 /*
  *
  *      Estilos de barra de navegaciĂłn

@@ -71,7 +71,7 @@
 					<!-- Progreso de Registro -->
 					<ul class="wizard-steps-extensive" id="wizard-steps">
 						<li data-text="step" class="completed">
-							<h5>1</h5><span>Información general</span>
+							<h5>1</h5><span>Datos Generales</span>
 						</li>
 						<li data-text="step" class="">
 							<h5>2</h5><span>Domicilio</span>
@@ -83,7 +83,7 @@
 							<h5>4</h5><span>Secundaria de procedencia</span>
 						</li>
 						<li data-text="step" class="">
-							<h5>5</h5><span>Selecciona tu carrera o especialidad</span>
+							<h5>5</h5><span>Especialidad</span>
 						</li>
 						<li id="status">
 							<i class="glyphicon glyphicon-ok-circle"></i>
@@ -91,7 +91,6 @@
 					</ul>
 
 					<form action="" id="" method=""accept-charset="utf-8">
-						
 						<!-- INFORMACIÓN GENERAL -->
 						<section class="tabs-step">
 
@@ -104,7 +103,7 @@
 										<label class="control-label" for="curp">CURP*:</label>
 										<div class="input-group">
 											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="aspirante[curp]" value="" id="curp" data-validation="required" placeholder="Ingresa la CURP" maxlength="18" class="form-control"/>
+											<input type="text" name="curp" value="" id="curp" data-validation="required" placeholder="Ingrese su CURP" maxlength="18" class="form-control"/>
 										</div>
 									</div>
 								</div>
@@ -116,7 +115,7 @@
 										<label class="control-label" for="nombre">Nombre*:</label>
 										<div class="input-group">
 											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="nombre" value="" id="nombre" data-validation="required" placeholder="Ingresa el nombre" maxlength="50" class="form-control"/>
+											<input type="text" name="nombre" value="" id="nombre" data-validation="required" placeholder="Ingrese su nombre" maxlength="50" class="form-control"/>
 										</div>
 									</div>
 								</div>
@@ -125,7 +124,7 @@
 										<label class="control-label" for="ap_paterno">Apellido Paterno*:</label>
 										<div class="input-group">
 											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="ap_paterno" value="" id="ap_paterno" data-validation="required" placeholder="Ingresa el apellido paterno" maxlength="50" class="form-control"/>
+											<input type="text" name="ap_paterno" value="" id="ap_paterno" data-validation="required" placeholder="Ingrese su apellido paterno" maxlength="50" class="form-control"/>
 										</div>
 									</div>
 								</div>
@@ -134,7 +133,7 @@
 										<label class="control-label" for="ap_materno">Apellido Materno*:</label>
 										<div class="input-group">
 											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="ap_materno" value="" id="ap_materno" data-validation="required" placeholder="Ingresa el apellido materno" maxlength="50" class="form-control"/>
+											<input type="text" name="ap_materno" value="" id="ap_materno" data-validation="required" placeholder="Ingrese su apellido materno" maxlength="50" class="form-control"/>
 										</div>
 									</div>
 								</div>
@@ -147,19 +146,19 @@
 										<label class="control-label" for="date">Fecha de nacimiento*:</label>
 										<div class="input-group">
 										<span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
-										<input type="text" name="date" value="" id="date" placeholder="Selecciona tu fecha de nacimiento" data-validation="required date" data-validation-format="yyyy-mm-dd" class="form-control"/>
+										<input type="text" name="date" value="" id="date" placeholder="Seleccione su fecha de nacimiento" data-validation="required date" data-validation-format="yyyy-mm-dd" class="form-control"/>
 										</div>
 									</div>
 								</div>
 								
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="">Estado de nacimiento*:</label>
+										<label class="control-label" for="estado">Estado de nacimiento*:</label>
 											<div class="input-group">
 											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
 											<select id="estado" name="estado" data-validation="required" class="form-control">
 												<option value="">Seleccione su estado</option>
-												<option value="1">1</option>
+												<option value="1">Estado 1</option>
 											</select>
 										</div>
 									</div>
@@ -167,12 +166,12 @@
 
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="">Municipio de nacimiento*:</label>
+										<label class="control-label" for="municipio">Municipio de nacimiento*:</label>
 											<div class="input-group">
 											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
-											<select id="estado" name="estado" data-validation="required" class="form-control">
+											<select id="municipio" name="municipio" data-validation="required" class="form-control">
 												<option value="">Seleccione su municipio</option>
-												<option value="1">1</option>
+												<option value="1">Municipio 1</option>
 											</select>
 										</div>
 									</div>
@@ -186,7 +185,7 @@
 										<div class="input-group">
 											<span class="input-group-addon icon-font-male-female" aria-hidden="true"></span>
 											<select id="sexo" name="sexo" data-validation="required" class="form-control">
-												<option value="">Selecciona una opción</option>
+												<option value="">Seleccione una opción</option>
 												<option value="1">HOMBRE</option>
 												<option value="2">MUJER</option>
 											</select>
@@ -197,10 +196,10 @@
 								
 								<div class="col-md-4" >
 									<div class="form-group">
-										<label class="control-label" for="">Correo electrónico*:</label>
+										<label class="control-label" for="correo">Correo electrónico*:</label>
 										<div class="input-group">
 											<span class="input-group-addon icon-font-envelope" aria-hidden="true" ></span>
-											<input type="text" name="correo" value="" id="correo" placeholder="Ingresa tu correo electrónico" data-validation="required email" class="form-control"/>
+											<input type="text" name="correo" value="" id="correo" placeholder="Ingrese su correo electrónico" data-validation="required email" class="form-control"/>
 										</div>
 									</div>
 								</div>
@@ -211,7 +210,7 @@
 										<label class="control-label" for="telefono">Número de teléfono*:</label>
 											<div class="input-group">
 												<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
-												<input type="text" name="telefono" value="" id="telefono" placeholder="Ingresa tu número telefónico" maxlength="10"
+												<input type="text" name="telefono" value="" id="telefono" placeholder="Ingrese su número telefónico" maxlength="10"
 														data-validation="required number" class="form-control"/>
 											</div>
 									</div>
