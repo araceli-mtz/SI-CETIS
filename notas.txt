@@ -5,33 +5,7 @@
 						<hr class="blue">
 
 						<div class="row">
-							<div class="col-md-4">
-
-								<div class="form-group">
-
-									<label class="control-label" for="codigo_postal_aspirante">
-
-										Codigo Postal
-										*:
-
-
-									</label>
-
-									<div class="input-group">
-										<span class="input-group-addon icon-font-paperclip"
-											aria-hidden="true"></span>
-										<input type="number" name="aspirante_direccion[codigo_postal]" value=""
-											id="codigo_postal_aspirante" placeholder="Código postal" maxlength="5"
-											data-validation="required number length" data-validation-length="5"
-											onkeyup="datos_codigo_postal(this.value, 'aspirante')"
-											class="form-control" />
-
-									</div>
-
-
-								</div>
-
-							</div>
+							
 							<div class="col-md-4">
 
 								<div class="form-group">

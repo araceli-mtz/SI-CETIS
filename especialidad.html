@@ -94,71 +94,18 @@
 						<!-- INFORMACIÓN GENERAL -->
 						<section class="tabs-step">
 
-							<h3>Datos Generales del Aspirante</h3>
+							<h3>Especialidad a elegir</h3>
 							<hr class="blue">
 
 							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="curp">CURP*:</label>
-										<div class="input-group">
-											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="curp" value="" id="curp" data-validation="required" placeholder="Ingrese su CURP" maxlength="18" class="form-control"/>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="nombre">Nombre*:</label>
-										<div class="input-group">
-											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="nombre" value="" id="nombre" data-validation="required" placeholder="Ingrese su nombre" maxlength="50" class="form-control"/>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="ap_paterno">Apellido Paterno*:</label>
-										<div class="input-group">
-											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="ap_paterno" value="" id="ap_paterno" data-validation="required" placeholder="Ingrese su apellido paterno" maxlength="50" class="form-control"/>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="ap_materno">Apellido Materno*:</label>
-										<div class="input-group">
-											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="ap_materno" value="" id="ap_materno" data-validation="required" placeholder="Ingrese su apellido materno" maxlength="50" class="form-control"/>
-										</div>
-									</div>
-								</div>
-								
-							</div>
-
-							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="date">Fecha de nacimiento*:</label>
-										<div class="input-group">
-										<span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
-										<input type="text" name="date" value="" id="date" placeholder="Seleccione su fecha de nacimiento" data-validation="required date" data-validation-format="yyyy-mm-dd" class="form-control"/>
-										</div>
-									</div>
-								</div>
 								
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="estado">Estado de nacimiento*:</label>
+										<label class="control-label" for="esp_op1">Primera Opción*:</label>
 											<div class="input-group">
 											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
-											<select id="estado" name="estado" data-validation="required" class="form-control">
-												<option value="">Seleccione su estado</option>
-												<option value="1">Estado 1</option>
+											<select id="esp_op1" name="esp_op1" data-validation="required" class="form-control">
+												<option value="">Seleccione su primera opción</option>
 											</select>
 										</div>
 									</div>
@@ -166,56 +113,30 @@
 
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="municipio">Municipio de nacimiento*:</label>
+										<label class="control-label" for="esp_op2">Segunda Opción*:</label>
 											<div class="input-group">
 											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
-											<select id="municipio" name="municipio" data-validation="required" class="form-control">
-												<option value="">Seleccione su municipio</option>
-												<option value="1">Municipio 1</option>
+											<select id="esp_op2" name="esp_op2" data-validation="required" class="form-control">
+												<option value="">Seleccione su segunda opción</option>
 											</select>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="sexo">Sexo*:</label>
-										<div class="input-group">
-											<span class="input-group-addon icon-font-male-female" aria-hidden="true"></span>
-											<select id="sexo" name="sexo" data-validation="required" class="form-control">
-												<option value="">Seleccione una opción</option>
-												<option value="1">HOMBRE</option>
-												<option value="2">MUJER</option>
-											</select>
-										</div>
-									</div>
-								</div>
-
-								
-								<div class="col-md-4" >
-									<div class="form-group">
-										<label class="control-label" for="correo">Correo electrónico*:</label>
-										<div class="input-group">
-											<span class="input-group-addon icon-font-envelope" aria-hidden="true" ></span>
-											<input type="text" name="correo" value="" id="correo" placeholder="Ingrese su correo electrónico" data-validation="required email" class="form-control"/>
 										</div>
 									</div>
 								</div>
 
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="telefono">Número de teléfono*:</label>
+										<label class="control-label" for="esp_op3">Tercera Opción*:</label>
 											<div class="input-group">
-												<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
-												<input type="text" name="telefono" value="" id="telefono" placeholder="Ingrese su número telefónico" maxlength="10"
-														data-validation="required number" class="form-control"/>
-											</div>
+											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
+											<select id="esp_op3" name="esp_op3" data-validation="required" class="form-control">
+												<option value="">Seleccione su tercera opción</option>
+											</select>
+										</div>
 									</div>
 								</div>
 
 							</div>
+
 
 							<!-- BOTONES -->
 							<div class="row">

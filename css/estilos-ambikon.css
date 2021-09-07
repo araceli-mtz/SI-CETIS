@@ -980,3 +980,13 @@ a.list-group-item p {
 /*.btn-primary {
     color: #e0e0e0 !important;
 }*/
+
+.form-group .form-control-lada {
+    width: 23%;
+    margin-right: 0%;
+}
+
+.form-group .form-control-phone {
+    width: 71%;
+    margin-right: 6%;
+}

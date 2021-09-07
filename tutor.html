@@ -94,16 +94,16 @@
 						<!-- INFORMACIÓN GENERAL -->
 						<section class="tabs-step">
 
-							<h3>Datos Generales del Aspirante</h3>
+							<h3>Datos del del padre, madre o tutor</h3>
 							<hr class="blue">
 
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="curp">CURP*:</label>
+										<label class="control-label" for="tutor_curp">CURP del padre, madre o tutor*:</label>
 										<div class="input-group">
 											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="curp" value="" id="curp" data-validation="required" placeholder="Ingrese su CURP" maxlength="18" class="form-control"/>
+											<input type="text" name="tutor_curp" value="" id="tutor_curp" data-validation="required" placeholder="Ingrese su CURP" maxlength="18" class="form-control"/>
 										</div>
 									</div>
 								</div>
@@ -112,67 +112,28 @@
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="nombre">Nombre*:</label>
+										<label class="control-label" for="tutor_nom">Nombre*:</label>
 										<div class="input-group">
 											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="nombre" value="" id="nombre" data-validation="required" placeholder="Ingrese su nombre" maxlength="50" class="form-control"/>
+											<input type="text" name="tutor_nom" value="" id="tutor_nom" data-validation="required" placeholder="Ingrese el nombre" maxlength="50" class="form-control"/>
 										</div>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="ap_paterno">Apellido Paterno*:</label>
+										<label class="control-label" for="tutor_app">Apellido Paterno*:</label>
 										<div class="input-group">
 											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="ap_paterno" value="" id="ap_paterno" data-validation="required" placeholder="Ingrese su apellido paterno" maxlength="50" class="form-control"/>
+											<input type="text" name="tutor_app" value="" id="tutor_app" data-validation="required" placeholder="Ingrese el apellido paterno" maxlength="50" class="form-control"/>
 										</div>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="ap_materno">Apellido Materno*:</label>
+										<label class="control-label" for="tutor_apm">Apellido Materno*:</label>
 										<div class="input-group">
 											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="ap_materno" value="" id="ap_materno" data-validation="required" placeholder="Ingrese su apellido materno" maxlength="50" class="form-control"/>
-										</div>
-									</div>
-								</div>
-								
-							</div>
-
-							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="date">Fecha de nacimiento*:</label>
-										<div class="input-group">
-										<span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
-										<input type="text" name="date" value="" id="date" placeholder="Seleccione su fecha de nacimiento" data-validation="required date" data-validation-format="yyyy-mm-dd" class="form-control"/>
-										</div>
-									</div>
-								</div>
-								
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="estado">Estado de nacimiento*:</label>
-											<div class="input-group">
-											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
-											<select id="estado" name="estado" data-validation="required" class="form-control">
-												<option value="">Seleccione su estado</option>
-												<option value="1">Estado 1</option>
-											</select>
-										</div>
-									</div>
-								</div>
-
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="municipio">Municipio de nacimiento*:</label>
-											<div class="input-group">
-											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
-											<select id="municipio" name="municipio" data-validation="required" class="form-control">
-												<option value="">Seleccione su municipio</option>
-												<option value="1">Municipio 1</option>
-											</select>
+											<input type="text" name="tutor_apm" value="" id="tutor_apm" data-validation="required" placeholder="Ingrese el apellido materno" maxlength="50" class="form-control"/>
 										</div>
 									</div>
 								</div>
@@ -181,40 +142,35 @@
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="sexo">Sexo*:</label>
+										<label class="control-label" for="tutor_ocup">Ocupación*:</label>
 										<div class="input-group">
-											<span class="input-group-addon icon-font-male-female" aria-hidden="true"></span>
-											<select id="sexo" name="sexo" data-validation="required" class="form-control">
-												<option value="">Seleccione una opción</option>
-												<option value="1">HOMBRE</option>
-												<option value="2">MUJER</option>
-											</select>
-										</div>
-									</div>
-								</div>
-
-								
-								<div class="col-md-4" >
-									<div class="form-group">
-										<label class="control-label" for="correo">Correo electrónico*:</label>
-										<div class="input-group">
-											<span class="input-group-addon icon-font-envelope" aria-hidden="true" ></span>
-											<input type="text" name="correo" value="" id="correo" placeholder="Ingrese su correo electrónico" data-validation="required email" class="form-control"/>
+											<span class="input-group-addon icon-user" aria-hidden="true"></span>
+											<input type="text" name="tutor_ocup" value="" id="tutor_ocup" data-validation="required" placeholder="Ingrese la ocupación del tutor" maxlength="50" class="form-control"/>
 										</div>
 									</div>
 								</div>
 
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="telefono">Número de teléfono*:</label>
+										<label class="control-label" for="tutor_tel">Número de teléfono*:</label>
 											<div class="input-group">
 												<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
-												<input type="text" name="telefono" value="" id="telefono" placeholder="Ingrese su número telefónico" maxlength="10"
+												<input type="text" name="tutor_tel" value="" id="tutor_tel" placeholder="Ingrese su número telefónico" maxlength="10"
 														data-validation="required number" class="form-control"/>
 											</div>
 									</div>
 								</div>
 
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="tutor_cel">Número de celular*:</label>
+											<div class="input-group">
+												<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
+												<input type="text" name="tutor_cel" value="" id="tutor_cel" placeholder="Ingrese su número de celular" maxlength="10"
+														data-validation="required number" class="form-control"/>
+											</div>
+									</div>
+								</div>
 							</div>
 
 							<!-- BOTONES -->

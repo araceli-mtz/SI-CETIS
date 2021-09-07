@@ -94,16 +94,51 @@
 						<!-- INFORMACIÓN GENERAL -->
 						<section class="tabs-step">
 
-							<h3>Datos Generales del Aspirante</h3>
+							<h3>Información de Secundaria de procedencia</h3>
 							<hr class="blue">
+							<p class="text-justify">Si proviene de una secundaria privada y el sistema no la reconoce, ingresa la clave: <b>SECPRIVADA</b>
+			
 
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="curp">CURP*:</label>
+										<label class="control-label" for="sec_clave">Clave de Escuela*:</label>
 										<div class="input-group">
-											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="curp" value="" id="curp" data-validation="required" placeholder="Ingrese su CURP" maxlength="18" class="form-control"/>
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_clave" value="" id="sec_clave" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_nombre">Nombre de Escuela*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_nombre" value="" id="sec_nombre" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_tipoesc">Tipo de Escuela*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_tipoesc" value="" id="sec_tipoesc" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_tiposost">Tipo de Sostenimiento*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_tiposost" value="" id="sec_tiposost" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
 										</div>
 									</div>
 								</div>
@@ -112,67 +147,30 @@
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="nombre">Nombre*:</label>
+										<label class="control-label" for="sec_edo">Estado*:</label>
 										<div class="input-group">
-											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="nombre" value="" id="nombre" data-validation="required" placeholder="Ingrese su nombre" maxlength="50" class="form-control"/>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="ap_paterno">Apellido Paterno*:</label>
-										<div class="input-group">
-											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="ap_paterno" value="" id="ap_paterno" data-validation="required" placeholder="Ingrese su apellido paterno" maxlength="50" class="form-control"/>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="ap_materno">Apellido Materno*:</label>
-										<div class="input-group">
-											<span class="input-group-addon icon-user" aria-hidden="true"></span>
-											<input type="text" name="ap_materno" value="" id="ap_materno" data-validation="required" placeholder="Ingrese su apellido materno" maxlength="50" class="form-control"/>
-										</div>
-									</div>
-								</div>
-								
-							</div>
-
-							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="date">Fecha de nacimiento*:</label>
-										<div class="input-group">
-										<span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
-										<input type="text" name="date" value="" id="date" placeholder="Seleccione su fecha de nacimiento" data-validation="required date" data-validation-format="yyyy-mm-dd" class="form-control"/>
-										</div>
-									</div>
-								</div>
-								
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="estado">Estado de nacimiento*:</label>
-											<div class="input-group">
-											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
-											<select id="estado" name="estado" data-validation="required" class="form-control">
-												<option value="">Seleccione su estado</option>
-												<option value="1">Estado 1</option>
-											</select>
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_edo" value="" id="sec_edo" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
 										</div>
 									</div>
 								</div>
 
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="municipio">Municipio de nacimiento*:</label>
-											<div class="input-group">
-											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
-											<select id="municipio" name="municipio" data-validation="required" class="form-control">
-												<option value="">Seleccione su municipio</option>
-												<option value="1">Municipio 1</option>
-											</select>
+										<label class="control-label" for="sec_mpio">Municipio*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_mpio" value="" id="sec_mpio" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_loc">Localidad*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_loc" value="" id="sec_loc" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
 										</div>
 									</div>
 								</div>
@@ -181,40 +179,57 @@
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label" for="sexo">Sexo*:</label>
+										<label class="control-label" for="sec_dir">Director de Plantel*:</label>
 										<div class="input-group">
-											<span class="input-group-addon icon-font-male-female" aria-hidden="true"></span>
-											<select id="sexo" name="sexo" data-validation="required" class="form-control">
-												<option value="">Seleccione una opción</option>
-												<option value="1">HOMBRE</option>
-												<option value="2">MUJER</option>
-											</select>
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_dir" value="" id="sec_dir" data-validation="required" placeholder="Ingrese el nombre director" maxlength="10" class="form-control"/>
 										</div>
 									</div>
 								</div>
 
-								
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_tel">Teléfono de Escuela*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
+											<input type="text" name="sec_tel" value="" id="sec_tel" placeholder="Ingrese su número telefónico" maxlength="10"
+													data-validation="required number" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_promedio">Promedio general*:
+											<span class="glyphicon glyphicon-question-sign"
+												data-toggle="tooltip"
+												data-placement="top"
+												title="Debe estar basado en una escala general del 0 al 10"
+												data-original-title="Debe estar basado en una escala general del 0 al 10">
+											</span>
+										</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true" ></span>
+											<input type="number" name="sec_promedio" value="" id="sec_promedio" placeholder="Ingrese su promedio general" step="0.1" data-validation="required number" data-validation-allowing="range[0;10],float" class="form-control"  />
+										</div>			
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
 								<div class="col-md-4" >
 									<div class="form-group">
-										<label class="control-label" for="correo">Correo electrónico*:</label>
+										<label class="control-label" for="adeuda_materias">¿Adeudas materias?*:</label>
 										<div class="input-group">
-											<span class="input-group-addon icon-font-envelope" aria-hidden="true" ></span>
-											<input type="text" name="correo" value="" id="correo" placeholder="Ingrese su correo electrónico" data-validation="required email" class="form-control"/>
+											<span class="input-group-addon icon-font-user" aria-hidden="true" ></span>
+											<select id="adeuda_materias" name="aspirante_secundaria[adeuda_materias]" data-validation="required" class="form-control">
+												<option value="">Selecciona una opción</option>
+												<option value="0">NO</option>
+												<option value="1">SI</option>
+											</select>
 										</div>
 									</div>
 								</div>
-
-								<div class="col-md-4">
-									<div class="form-group">
-										<label class="control-label" for="telefono">Número de teléfono*:</label>
-											<div class="input-group">
-												<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
-												<input type="text" name="telefono" value="" id="telefono" placeholder="Ingrese su número telefónico" maxlength="10"
-														data-validation="required number" class="form-control"/>
-											</div>
-									</div>
-								</div>
-
 							</div>
 
 							<!-- BOTONES -->
