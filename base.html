@@ -10,23 +10,21 @@
 	<title>CETIS 145</title>
 	
 	<!-- CSS -->
-	<!-- Gob MX Framework -->
 	<link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
 	<link href="css/estilos.css" rel="stylesheet">
-	
-	<!-- Icons -->
+	<!--Por sustituir-->
 	<link href="https://plantel.ambikon.com.mx/assets/css/icons.css" rel="stylesheet">
 
 	<!-- JQuerry CDN -->
-	<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
 </head>
+	<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
 
 <body> 
 	<!-- Contenido -->
 	<main class="page">
 
 		<!-- Menú de navegación -->
-		<div class="fixer">...</div>
+		<div class="fixer"></div>
 
 		<nav class="navbar navbar-inverse sub-navbar navbar-fixed-top" id="navegacion">
 			<div class="container">
@@ -86,7 +84,556 @@
 
 					<form action="" id="" method=""accept-charset="utf-8">
 						<!-- INFORMACIÓN GENERAL -->
-						
+						<!--Info Gral-->
+						<section class="tabs-step">
+
+							<h3>Datos Generales del Aspirante</h3>
+							<hr class="blue">
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="asp_curp">CURP*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-user" aria-hidden="true"></span>
+											<input type="text" name="asp_curp" value="" id="asp_curp" data-validation="required" placeholder="Ingrese su CURP" maxlength="18" class="form-control"/>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="asp_nombre">Nombre*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-user" aria-hidden="true"></span>
+											<input type="text" name="asp_nombre" value="" id="asp_nombre" data-validation="required" placeholder="Ingrese su nombre" maxlength="50" class="form-control"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="asp_app">Apellido Paterno*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-user" aria-hidden="true"></span>
+											<input type="text" name="asp_app" value="" id="asp_app" data-validation="required" placeholder="Ingrese su apellido paterno" maxlength="50" class="form-control"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="asp_apm">Apellido Materno*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-user" aria-hidden="true"></span>
+											<input type="text" name="asp_apm" value="" id="asp_apm" data-validation="required" placeholder="Ingrese su apellido materno" maxlength="50" class="form-control"/>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="date">Fecha de nacimiento*:</label>
+										<div class="input-group">
+										<span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
+										<input type="text" name="date" value="" id="date" placeholder="Seleccione su fecha de nacimiento" data-validation="required date" data-validation-format="yyyy-mm-dd" class="form-control"/>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="asp_edonac">Estado de nacimiento*:</label>
+											<div class="input-group">
+											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
+											<select id="asp_edonac" name="asp_edonac" data-validation="required" class="form-control">
+												<option value="">Seleccione su estado</option>
+												<option value="1">Estado 1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="asp_mpionac">Municipio de nacimiento*:</label>
+											<div class="input-group">
+											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
+											<select id="asp_mpionac" name="asp_mpionac" data-validation="required" class="form-control">
+												<option value="">Seleccione su municipio</option>
+												<option value="1">Municipio 1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="asp_sexo">Sexo*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-male-female" aria-hidden="true"></span>
+											<select id="asp_sexo" name="asp_sexo" data-validation="required" class="form-control">
+												<option value="">Seleccione una opción</option>
+												<option value="1">HOMBRE</option>
+												<option value="2">MUJER</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								
+								<div class="col-md-4" >
+									<div class="form-group">
+										<label class="control-label" for="asp_correo">Correo electrónico*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-envelope" aria-hidden="true" ></span>
+											<input type="email" name="asp_correo" value="" id="asp_correo" placeholder="Ingrese su correo electrónico" data-validation="required email" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="asp_tel">Número de teléfono*:</label>
+											<div class="input-group">
+												<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
+												<input type="text" name="asp_tel" value="" id="asp_tel" placeholder="Ingrese su número telefónico" maxlength="10"
+														data-validation="required number" class="form-control"/>
+											</div>
+									</div>
+								</div>
+
+							</div>
+
+							<!-- BOTONES -->
+							<div class="row">
+								<div class="col-md-8 col-md-offset-4"><hr></div>
+							</div>
+							<div class="clearfix">
+								<div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
+								<div class="pull-right">
+									<a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
+									<button type="button" class="btn btn-primary" role="button" aria-label="bottón Siguiente">Siguiente</button>
+								</div>
+							</div>
+						</section>
+
+						<!--Domicilio-->
+						<section class="tabs-step">
+							
+							<h3>Domicilio actual del Aspirante</h3>
+							<hr class="blue">
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="dom_cp">Codigo Postal*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="dom_cp" value="" id="dom_cp" data-validation="required" placeholder="Código Postal" maxlength="5" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="dom_edo">Estado*:</label>
+											<div class="input-group">
+											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
+											<select id="dom_edo" name="dom_edo" data-validation="required" class="form-control">
+												<option value="">Ingrese su código postal</option>
+												<option value="1">Estado 1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="dom_mpio">Municipio*:</label>
+											<div class="input-group">
+											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
+											<select id="dom_mpio" name="dom_mpio" data-validation="required" class="form-control">
+												<option value="">Ingrese su código postal</option>
+												<option value="1">Municipio 1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="dom_loc">Localidad*:</label>
+											<div class="input-group">
+											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
+											<select id="dom_loc" name="dom_loc" data-validation="required" class="form-control">
+												<option value="">Ingrese su código postal</option>
+												<option value="1">Localidad 1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="dom_col">Asentamiento (Colonia)*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-user" aria-hidden="true"></span>
+											<input type="text" name="dom_col" value="" id="dom_col" data-validation="required" placeholder="Nombre de su colonia" maxlength="50" class="form-control"/>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-4">
+									<div class="form-group clearfix">
+									
+									<div class="form-control-phone">
+										<label for="dom_calle">Calle<span class="form-text">*</span>:</label>
+										<input type="text" name="dom_calle" id="dom_calle" class="form-control" data-validation="required" placeholder="Calle">
+									</div>
+
+									<div class="form-control-lada">
+										<label for="dom_num">Número<span class="form-text">*</span>:</label>
+										<input type="text" name="dom_num" id="dom_num" class="form-control" data-validation="required" placeholder="No.">
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- BOTONES -->
+							<div class="row">
+								<div class="col-md-8 col-md-offset-4"><hr></div>
+							</div>
+							<div class="clearfix">
+								<div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
+								<div class="pull-right">
+									<a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
+									<button type="button" class="btn btn-default" role="button" aria-label="bottón Atras" >Atras</button>
+									<button type="button" class="btn btn-primary" role="button" aria-label="bottón Siguiente">Siguiente</button>
+								</div>
+							</div>
+						</section>
+
+						<!--Padre o tutor-->
+						<section class="tabs-step">
+
+							<h3>Datos del del padre, madre o tutor</h3>
+							<hr class="blue">
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="tutor_curp">CURP del padre, madre o tutor*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-user" aria-hidden="true"></span>
+											<input type="text" name="tutor_curp" value="" id="tutor_curp" data-validation="required" placeholder="Ingrese su CURP" maxlength="18" class="form-control"/>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="tutor_nom">Nombre*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-user" aria-hidden="true"></span>
+											<input type="text" name="tutor_nom" value="" id="tutor_nom" data-validation="required" placeholder="Ingrese el nombre" maxlength="50" class="form-control"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="tutor_app">Apellido Paterno*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-user" aria-hidden="true"></span>
+											<input type="text" name="tutor_app" value="" id="tutor_app" data-validation="required" placeholder="Ingrese el apellido paterno" maxlength="50" class="form-control"/>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="tutor_apm">Apellido Materno*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-user" aria-hidden="true"></span>
+											<input type="text" name="tutor_apm" value="" id="tutor_apm" data-validation="required" placeholder="Ingrese el apellido materno" maxlength="50" class="form-control"/>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="tutor_ocup">Ocupación*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-user" aria-hidden="true"></span>
+											<input type="text" name="tutor_ocup" value="" id="tutor_ocup" data-validation="required" placeholder="Ingrese la ocupación del tutor" maxlength="50" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="tutor_tel">Número de teléfono*:</label>
+											<div class="input-group">
+												<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
+												<input type="text" name="tutor_tel" value="" id="tutor_tel" placeholder="Ingrese su número telefónico" maxlength="10"
+														data-validation="required number" class="form-control"/>
+											</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="tutor_cel">Número de celular*:</label>
+											<div class="input-group">
+												<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
+												<input type="text" name="tutor_cel" value="" id="tutor_cel" placeholder="Ingrese su número de celular" maxlength="10"
+														data-validation="required number" class="form-control"/>
+											</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- BOTONES -->
+							<div class="row">
+								<div class="col-md-8 col-md-offset-4"><hr></div>
+							</div>
+							<div class="clearfix">
+								<div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
+								<div class="pull-right">
+									<a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
+									<button type="button" class="btn btn-default" role="button" aria-label="bottón Atras" >Atras</button>
+									<button type="button" class="btn btn-primary" role="button" aria-label="bottón Siguiente">Siguiente</button>
+								</div>
+							</div>
+						</section>
+
+						<!--Secundaria procedencia-->
+						<section class="tabs-step">
+
+							<h3>Información de Secundaria de procedencia</h3>
+							<hr class="blue">
+							<p class="text-justify">Si proviene de una secundaria privada y el sistema no la reconoce, ingresa la clave: <b>SECPRIVADA</b>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_clave">Clave de Escuela*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_clave" value="" id="sec_clave" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_nombre">Nombre de Escuela*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_nombre" value="" id="sec_nombre" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_tipoesc">Tipo de Escuela*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_tipoesc" value="" id="sec_tipoesc" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_tiposost">Tipo de Sostenimiento*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_tiposost" value="" id="sec_tiposost" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_edo">Estado*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_edo" value="" id="sec_edo" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_mpio">Municipio*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_mpio" value="" id="sec_mpio" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_loc">Localidad*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_loc" value="" id="sec_loc" data-validation="required" placeholder="Ingrese la clave de Secundaria" maxlength="10" class="form-control"/>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_dir">Director de Plantel*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true"></span>
+											<input type="text" name="sec_dir" value="" id="sec_dir" data-validation="required" placeholder="Ingrese el nombre director" maxlength="10" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_tel">Teléfono de Escuela*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-phone" aria-hidden="true"></span>
+											<input type="text" name="sec_tel" value="" id="sec_tel" placeholder="Ingrese su número telefónico" maxlength="10"
+													data-validation="required number" class="form-control"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="sec_promedio">Promedio general*:
+											<span class="glyphicon glyphicon-question-sign"
+												data-toggle="tooltip"
+												data-placement="top"
+												title="Debe estar basado en una escala general del 0 al 10"
+												data-original-title="Debe estar basado en una escala general del 0 al 10">
+											</span>
+										</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-paperclip" aria-hidden="true" ></span>
+											<input type="number" name="sec_promedio" value="" id="sec_promedio" placeholder="Ingrese su promedio general" step="0.1" data-validation="required number" data-validation-allowing="range[0;10],float" class="form-control"  />
+										</div>			
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-4" >
+									<div class="form-group">
+										<label class="control-label" for="sec_adeudos">¿Adeudas materias?*:</label>
+										<div class="input-group">
+											<span class="input-group-addon icon-font-user" aria-hidden="true" ></span>
+											<select id="sec_adeudos" name="sec_adeudos" data-validation="required" class="form-control">
+												<option value="">Selecciona una opción</option>
+												<option value="0">NO</option>
+												<option value="1">SI</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- BOTONES -->
+							<div class="row">
+								<div class="col-md-8 col-md-offset-4"><hr></div>
+							</div>
+							<div class="clearfix">
+								<div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
+								<div class="pull-right">
+									<a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
+									<button type="button" class="btn btn-default" role="button" aria-label="bottón Atras" >Atras</button>
+									<button type="button" class="btn btn-primary" role="button" aria-label="bottón Siguiente">Siguiente</button>
+								</div>
+							</div>
+						</section>
+
+						<!--Especialidad-->
+						<section class="tabs-step">
+
+							<h3>Especialidad a elegir</h3>
+							<hr class="blue">
+
+							<div class="row">  
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="esp_op1">Primera Opción*:</label>
+											<div class="input-group">
+											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
+											<select id="esp_op1" name="esp_op1" data-validation="required" class="form-control">
+												<option value="">Seleccione su primera opción</option>
+												<option value="1">Opción 1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="esp_op2">Segunda Opción*:</label>
+											<div class="input-group">
+											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
+											<select id="esp_op2" name="esp_op2" data-validation="required" class="form-control">
+												<option value="">Seleccione su segunda opción</option>
+												<option value="1">Opción 2</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label class="control-label" for="esp_op3">Tercera Opción*:</label>
+											<div class="input-group">
+											<span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
+											<select id="esp_op3" name="esp_op3" data-validation="required" class="form-control">
+												<option value="">Seleccione su tercera opción</option>
+												<option value="1">Opción 3</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+
+							<!-- BOTONES -->
+							<div class="row">
+								<div class="col-md-8 col-md-offset-4"><hr></div>
+							</div>
+							<div class="clearfix">
+								<div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
+								<div class="pull-right">
+									<a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
+									<button type="button" class="btn btn-default" role="button" aria-label="bottón Atras" >Atras</button>
+									<button type="submit" class="btn btn-primary" role="button" aria-label="bottón Enviar" >Enviar</button>
+								</div>
+							</div>
+						</section>
 					</form>
 				</div>
 			</div>
@@ -99,57 +646,25 @@
 		<p>Av. Las Palmas S/N, Colonia Jardines de Plaza Verde, Martínez de la Torre, Veracruz C.P. 93600</p>
 	</div>
 
-
 	<!-- Gob mx js -->
 	<script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
 
 	<!-- bootbox code -->
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
-	<script>
-		// Initialize page URL
-		var base_url = '#';
-		var form_current_url = '#';
-		
-		// $gmx = $;
-		$gmx(document).ready(function () {
-			// Prepare navigation menu
-			$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function (event) {
-				event.preventDefault();
-				event.stopPropagation();
-				$(this).parent().siblings().removeClass('open');
-				$(this).parent().toggleClass('open');
-			});
-		});
-
-	</script>
+	<script src="js/initialize.js"></script>
 
 	<!-- Script required by childs -->
 	<!-- Form validation CDN -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 	<!-- DatePicker CDN -->
-	<!--script src="https://framework-gb.cdn.gob.mx/assets/scripts/jquery-ui-datepicker.js"></script-->
 	<script src="https://cdn.datos.gob.mx/assets/js/jquery-ui-datepicker.min.js"></script>
 	<!-- Chosen CDN -->
 	<script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
 	<!-- Load JS service -->
 	<script src="https://plantel.ambikon.com.mx/assets/js/service.js"></script>
 
-	<script type="text/javascript">
-		var current_step = 0;
-		var api_url = base_url + 'api/aspirantes/';
-		var next_url = base_url + 'aspirantes';
-		var carreras = [{ "id": "1", "clave": "333400001-", "nombre": "CONTABILIDAD", "direccion_url": "contabilidad", "activo": "1" }, { "id": "2", "clave": "353200001-", "nombre": "CONSTRUCCI\u00d3N", "direccion_url": "mantenimiento_industrial", "activo": "1" }, { "id": "3", "clave": "344100002-", "nombre": "PROGRAMACI\u00d3N", "direccion_url": "programacion", "activo": "1" }, { "id": "4", "clave": "321300002-", "nombre": "MEDIOS DE COMUNICACI\u00d3N", "direccion_url": "trabajo_social", "activo": "1" }, { "id": "5", "clave": "351700001-", "nombre": "SOPORTE Y MANTENIMIENTO", "direccion_url": "mantenimiento_de_computo", "activo": "1" }, { "id": "6", "clave": "371400001-", "nombre": "LABORATORISTA CLINICO", "direccion_url": "laboratorio_clinico", "activo": "1" }]
-		$gmx(document).ready(function () {
-			// Date calendar initialize
-			$('#date').datepicker({
-				changeMonth: true,
-				changeYear: true,
-				dateFormat: 'yy-mm-dd',
-				yearRange: '-60:-10',
-			});
-		});
-	</script>
+	<script src="js/utilities.js"></script>
 
 	<!-- Load form JS -->
 	<script src="https://plantel.ambikon.com.mx/assets/js/form_utils.js"></script>

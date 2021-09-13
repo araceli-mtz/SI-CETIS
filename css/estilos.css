@@ -10,6 +10,7 @@ body {
 
 div.fixer {
     margin-top: 46px;
+    height: 25px;
 }
 
 .ui-datepicker select.ui-datepicker-month {
