@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>CETIS 145</title>
+
+	<!-- CSS -->
+	<!-- Gob MX Framework -->
+	<link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+	<link href="css/estilos.css" rel="stylesheet">
+
+	<!--Por sustituir-->
+	<link href="https://plantel.ambikon.com.mx/assets/css/icons.css" rel="stylesheet">
+	
+	<!-- JQuerry CDN -->
+	<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Contenido -->
+    <main class="page">
+
+        <!-- Menú de navegación -->
+        <div class="fixer">
+            <nav class="navbar navbar-inverse sub-navbar navbar-fixed-top" id="navegacion">
+                <div class="container">
+                    <!--Header de Barra de navegación-->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#subenlaces">
+                            <span class="sr-only">Interruptor de Navegación</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img alt="logo" src="img/logo.svg">
+                        </a>
+                    </div>
+
+                    <!--Sub Enlaces-->
+                    <div class="collapse navbar-collapse" id="subenlaces">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li class="dropdown">
+                                <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <span class="glyphicon glyphicon-home"></span>
+                                    Institución
+                                </a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    Aspirantes
+                                    <span class="caret visible-xs-inline-block"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Proceso de admisión</a></li>
+                                    <li><a href="#">Acceder como aspirante</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <span class="glyphicon glyphicon-log-in"></span>
+                                    Iniciar Sesión
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+            </nav>	
+        </div>
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    <h2> Inicio de sesión - Aspirante </h2>
+                    <hr class="red initial"/>
+                    <p class="text-justify">
+                        Ingresa tu CURP para comenzar tus trámites. Si tienes dudas sobre el procedimiento, puedes comunicarte con tu plantel.
+                    </p>
+
+                    <div class="col-md-6 col-md-offset-3">
+                        <form action="" class="well" id="" method="" accept-charset="utf-8">
+                        
+                            <div class="col-md-12" >
+                                <div class="form-group">
+                                    <label class="control-label" for="curp">CURP *:</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon icon-font-lock" aria-hidden="true" ></span>
+                                        <input type="text" name="curp" value="" id="curp" placeholder="Ingresa tu CURP" data-validation="required" class="form-control"  />
+                                    </div>          
+                                </div>
+                            </div>
+                        
+                            <!-- FORM BUTTONS -->
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <hr>
+                                </div>
+                            </div>
+
+                            <div class="clearfix">
+                                <div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
+                                
+                                <div class="pull-right">
+                                    <a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="https://www.cetis43.edu.mx/plantel/privacidad">Aviso de privacidad</a>
+                                    <button type="submit" class="btn btn-primary" role="button" aria-label="bottón Enviar">Enviar</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+	    </div>
+    </main>
+
+    <div class="site-copyright text-center">
+        <p>Centro de Estudios Tecnológicos Industrial y de Servicios No. 145</p>
+        <p>Av. Las Palmas S/N, Colonia Jardines de Plaza Verde, Martínez de la Torre, Veracruz C.P. 93600</p>
+    </div>
+
+    <!-- Gob mx js -->
+    <script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
+    <!-- bootbox code -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
+</body>
+
+</html>
