@@ -27,7 +27,7 @@
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon icon-user"></span>
                             Aspirantes
                             <span class="caret visible-xs-inline-block"></span>
                         </a>

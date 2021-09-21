@@ -27,44 +27,41 @@
 				<h2> Inicio Sesión - Aspirante </h2>
 				<hr class="red initial"/>
 
-				<p class="text-justify">
-                        Ingresa tu CURP para comenzar tus trámites. Si tienes dudas sobre el procedimiento, puedes comunicarte con tu plantel.
-                    </p>
+				<p class="text-justify">Ingresa tu CURP para comenzar tus trámites. Si tienes dudas sobre el procedimiento, puedes comunicarte con tu plantel.</p>
 
-                    <div class="col-md-6 col-md-offset-3">
-                        <form action="" class="well" id="" method="" accept-charset="utf-8">
-                        
-                            <div class="col-md-12" >
-                                <div class="form-group">
-                                    <label class="control-label" for="curp">CURP *:</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon icon-font-lock" aria-hidden="true" ></span>
-                                        <input type="text" name="curp" value="" id="curp" placeholder="Ingresa tu CURP" data-validation="required" class="form-control"  />
-                                    </div>          
-                                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <form action="" class="well" id="" method="" accept-charset="utf-8">
+                    
+                        <div class="col-md-12" >
+                            <div class="form-group">
+                                <label class="control-label" for="curp">CURP *:</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon icon-font-lock" aria-hidden="true" ></span>
+                                    <input type="text" name="curp" value="" id="curp" placeholder="Ingresa tu CURP" data-validation="required" class="form-control"  />
+                                </div>          
                             </div>
-                        
-                            <!-- FORM BUTTONS -->
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-4">
-                                    <hr>
-                                </div>
+                        </div>
+                    
+                        <!-- FORM BUTTONS -->
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-4">
+                                <hr>
                             </div>
+                        </div>
 
-                            <div class="clearfix">
-                                <div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
-                                
-                                <div class="pull-right">
-                                    <a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
-                                    <button type="submit" class="btn btn-primary" role="button" aria-label="bottón Enviar">Enviar</button>
-                                </div>
+                        <div class="clearfix">
+                            <div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
+                            
+                            <div class="pull-right">
+                                <a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
+                                <button type="submit" class="btn btn-primary" role="button" aria-label="bottón Enviar">Enviar</button>
                             </div>
+                        </div>
 
-                        </form>
-                    </div>
+                    </form>
+                </div>
 			</div>
 		</div>
-
 	</div>
     
     </main>

@@ -14,7 +14,6 @@ error_reporting(E_ALL ^ E_NOTICE);
 	<!-- CSS -->
 	<!-- Gob MX Framework -->
 	<link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
-    
 	<link href="css/estilos.css" rel="stylesheet">
 
 	<!--Por sustituir-->
