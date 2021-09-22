@@ -15,6 +15,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 	<!-- Gob MX Framework -->
 	<link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
 	<link href="css/estilos.css" rel="stylesheet">
+	<link href="img/dgti.ico" rel="icon">
 
 	<!--Por sustituir-->
 	<link href="https://plantel.ambikon.com.mx/assets/css/icons.css" rel="stylesheet">

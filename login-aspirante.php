@@ -12,6 +12,7 @@
 
     <!--Contenido-->
     <div class="container">
+        <!--Menú de navegación-->
 		<div class="row">
 			<div class="col-lg-8 col-md-6 col-sm-6">
 				<ol class="breadcrumb" aria-label="historial de navegación">
@@ -37,7 +38,7 @@
                                 <label class="control-label" for="curp">CURP *:</label>
                                 <div class="input-group">
                                     <span class="input-group-addon icon-font-lock" aria-hidden="true" ></span>
-                                    <input type="text" name="curp" value="" id="curp" placeholder="Ingresa tu CURP" data-validation="required" class="form-control"  />
+                                    <input type="text" name="curp" value="" id="curp" placeholder="Ingresa tu CURP" data-validation="required" class="form-control"/>
                                 </div>          
                             </div>
                         </div>
@@ -51,13 +52,14 @@
 
                         <div class="clearfix">
                             <div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
-                            
                             <div class="pull-right">
                                 <a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
+                                <a href="panel-aspirante.php"><button type="button" class="btn btn-primary" role="button" aria-label="bottón Enviar">Enviar</button></a>
+                                <!--
                                 <button type="submit" class="btn btn-primary" role="button" aria-label="bottón Enviar">Enviar</button>
+                                -->
                             </div>
                         </div>
-
                     </form>
                 </div>
 			</div>

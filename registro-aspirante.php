@@ -12,6 +12,8 @@
 
     <!--Contenido-->
     <div class="container">
+
+        <!--Menú de navegación-->
 		<div class="row">
 			<div class="col-lg-8 col-md-6 col-sm-6">
 				<ol class="breadcrumb" aria-label="historial de navegación">
@@ -52,11 +54,10 @@
             </li>
         </ul>
 
+        <!-- Formulario de datos -->
         <form action="" id="" method=""accept-charset="utf-8">
-            
             <!--Info Gral-->
             <section class="tabs-step">
-
                 <h3>Datos Generales del Aspirante</h3>
                 <hr class="blue">
 
@@ -194,8 +195,7 @@
             </section>
 
             <!--Domicilio-->
-            <section class="tabs-step">
-                
+            <section class="tabs-step">  
                 <h3>Domicilio actual del Aspirante</h3>
                 <hr class="blue">
 
@@ -294,7 +294,6 @@
 
             <!--Padre o tutor-->
             <section class="tabs-step">
-
                 <h3>Datos del del padre, madre o tutor</h3>
                 <hr class="blue">
 
@@ -383,17 +382,16 @@
                     <div class="pull-right">
                         <a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
                         <button type="button" class="btn btn-default" role="button" aria-label="bottón Atras" >Atras</button>
-                        <button type="button" class="btn btn-primary" role="button" aria-label="bottón Siguiente">Siguiente</button>
+                        <button type="button" class="btn btn-primary" role="button" aria-label="bottón Siguien te">Siguiente</button>
                     </div>
                 </div>
             </section>
 
             <!--Secundaria procedencia-->
             <section class="tabs-step">
-
                 <h3>Información de Secundaria de procedencia</h3>
                 <hr class="blue">
-                <p class="text-justify">Si proviene de una secundaria privada y el sistema no la reconoce, ingresa la clave: <b>SECPRIVADA</b>
+                <!--<p class="text-justify">Si proviene de una secundaria privada y el sistema no la reconoce, ingresa la clave: <b>SECPRIVADA</b>-->
 
                 <div class="row">
                     <div class="col-md-4">
@@ -536,19 +534,17 @@
                     <div class="pull-right">
                         <a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
                         <button type="button" class="btn btn-default" role="button" aria-label="bottón Atras" >Atras</button>
-                        <button type="button" class="btn btn-primary" role="button" aria-label="bottón Siguiente">Siguiente</button>
+                        <button type="button" class="btn btn-primary" role="button" aria-label="bottón Siguien te">Siguiente</button>
                     </div>
                 </div>
             </section>
 
             <!--Especialidad-->
             <section class="tabs-step">
-
-                <h3>Especialidad a elegir</h3>
+                <h3>Especialidad a Elegir</h3>
                 <hr class="blue">
 
                 <div class="row">  
-
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="control-label" for="esp_op1">Primera Opción*:</label>
@@ -587,7 +583,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
 
 
@@ -604,7 +599,6 @@
                     </div>
                 </div>
             </section>
-
         </form>
 
 	</div>

@@ -59,7 +59,10 @@
 						<div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
 						<div class="pull-right">
 							<a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
-							<button type="submit" class="btn btn-primary" role="button" aria-label="bottón Enviar" >Enviar</button>
+							<a href="panel-personal.php"><button type="button" class="btn btn-primary" role="button" aria-label="bottón Enviar">Enviar</button></a>
+							<!--
+							<button type="submit" class="btn btn-primary" role="button" aria-label="bottón Enviar">Enviar</button>
+							-->
 						</div>
 					</div>		
 				</form>
