@@ -12,27 +12,23 @@
 
     <!--Contenido-->
     <div class="container">
+        <!--Menú de navegación-->
 		<div class="row">
 			<div class="col-lg-8 col-md-6 col-sm-6">
 				<ol class="breadcrumb" aria-label="historial de navegación">
 					<li><a href="index.php"><i class="icon icon-home"></i></a></li>
-					<li class=active><a href="#" role="button" aria-label=""> Inicio </a></li>
+					<li><a href="panel-administrador.php" aria-label=""> Inicio </a></li>
+					<li class=active><a href="#" role="button" aria-label=""> Gestión de Usuarios </a></li>
 				</ol>
 			</div>
-
-			<div class="col-lg-4 col-md-6 col-sm-6">
-				<div class="time text-center">
-					<br>
-						<span class="glyphicon glyphicon-user"></span>
-						Bienvenido(a) <strong>USUARIO</strong>
-					</span>
-				</div>
-			</div>
 		</div>
+
 		<div class="row">
 			<div class="col-md-12">
-				<h2> Panel Personal </h2>
+				<h2> Gestión de Usuarios </h2>
 				<hr class="red initial"/>
+
+				
 			</div>
 		</div>
 	</div>

@@ -32,10 +32,22 @@
                             <span class="caret visible-xs-inline-block"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown dropdown-submenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Oferta educativa</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="especialidades.php"> Contabilidad </a></li>
+                                    <li><a href="especialidades.php"> Ofimática </a></li>
+                                    <li><a href="especialidades.php"> Electricidad </a></li>
+                                    <li><a href="especialidades.php"> Laboratorista Químico </a></li>
+                                    <li><a href="especialidades.php"> Recursos Humanos </a></li>
+                                </ul>
+                            </li>
                             <li><a href="proceso.php">Proceso de admisión</a></li>
                             <li><a href="login-aspirante.php">Acceder como aspirante</a></li>
                         </ul>
                     </li>
+
+                    
 
                     <li class="dropdown">
                         <a href="login-personal.php" class="dropdown-toggle">
