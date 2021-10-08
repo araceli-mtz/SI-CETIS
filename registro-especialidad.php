@@ -42,7 +42,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-md-offset-1">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label" for="esp_nombre">Nombre*:</label>
                                 <div class="input-group">
