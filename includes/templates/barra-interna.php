@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="subenlaces">
                 <ul class="nav navbar-nav navbar-left">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">
+                        <a href="panel-administrativo.php" class="dropdown-toggle">
                             <span class="glyphicon glyphicon-th-large"></span>
                             Panel Principal
                         </a>

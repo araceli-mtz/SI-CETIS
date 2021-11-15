@@ -25,6 +25,8 @@
     <!-- Script required by childs -->
 	<!-- Utils JS -->
 	<script src="https://plantel.ambikon.com.mx/assets/js/utils.js"></script>
+    <script src="js/funciones-ajax.js"></script>
+    
 
 </body>
 
