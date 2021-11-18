@@ -41,6 +41,18 @@
 					<p></p>
 				</div>
 
+				<?php 
+					try {
+						//Realiza la conexión
+						require_once('includes/funciones/bd_conexion.php');
+						//Consulta usuarios
+						$sql = " SELECT * FROM usuarios WHERE estatus = 1 and usuario_id > 0 ";
+						$resultado = $conn->query($sql);
+					} catch (\Exception $e) {
+						echo $e->getMessage();
+					}
+            	?>
+
 				<div class="table-responsive">
 					<table class="table table-bordered">
 					<thead>
@@ -54,62 +66,26 @@
 						</tr>
 					</thead>
 					<tbody>
+						<?php while($usuario = $resultado->fetch_assoc() ) {?>
 						<tr>
-							<td class="center">12345678</td>
-							<td>Lorem ipsum</td>
-							<td>Lorem ipsum</td>
-							<td>Lorem ipsum</td>
-							<td class="center">Lorem ipsum</td>
-							<td class="center"><a href="editar-usuario.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-							<td class="center"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span></button></td>
+							<td class="center"><?php echo $usuario['usuario_usuario'];?></td>
+							<td><?php echo $usuario['usuario_nombre'];?></td>
+							<td><?php echo $usuario['usuario_app'];?></td>
+							<td><?php echo $usuario['usuario_apm'];?></td>
+							<td class="center">
+								<?php if($usuario['usuario_tipousuario_id'] === '1'){ ?>
+                                    ADMINISTRADOR DE SISTEMA
+                                <?php } elseif ($usuario['usuario_tipousuario_id'] === '2') { ?>
+                                    PERSONAL ADMINISTRATIVO
+                                <?php } else { ?>
+								<?php }?>
+							</td>
+							<td class="center"><a href="editar-usuario.php?id=<?php echo $usuario['usuario_id']; ?>"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+							<td class="center"><button type="button" class="btn btn-primary borrar_registro" data-tipo="user" data-id="<?php echo $usuario['usuario_id']; ?>"><span class="glyphicon glyphicon-trash"></span></button></td>
 						</tr>
-						<tr>
-							<td class="center">12345678</td>
-							<td>Lorem ipsum</td>
-							<td>Lorem ipsum</td>
-							<td>Lorem ipsum</td>
-							<td class="center">Lorem ipsum</td>
-							<td class="center"><a href="editar-usuario.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-							<td class="center"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span></button></td>
-						</tr>
-						<tr>
-							<td class="center">12345678</td>
-							<td>Lorem ipsum</td>
-							<td>Lorem ipsum</td>
-							<td>Lorem ipsum</td>
-							<td class="center">Lorem ipsum</td>
-							<td class="center"><a href="editar-usuario.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-							<td class="center"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span></button></td>
-						</tr>
-						<tr>
-							<td class="center">12345678</td>
-							<td>Lorem ipsum</td>
-							<td>Lorem ipsum</td>
-							<td>Lorem ipsum</td>
-							<td class="center">Lorem ipsum</td>
-							<td class="center"><a href="editar-usuario.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-							<td class="center"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span></button></td>
-						</tr>
-						<tr>
-							<td class="center">12345678</td>
-							<td>Lorem ipsum</td>
-							<td>Lorem ipsum</td>
-							<td>Lorem ipsum</td>
-							<td class="center">Lorem ipsum</td>
-							<td class="center"><a href="editar-usuario.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-							<td class="center"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span></button></td>
-						</tr>
-						<tr>
-							<td class="center">12345678</td>
-							<td>Lorem ipsum</td>
-							<td>Lorem ipsum</td>
-							<td>Lorem ipsum</td>
-							<td class="center">Lorem ipsum</td>
-							<td class="center"><a href="editar-usuario.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-							<td class="center"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span></button></td>
-						</tr>
-						
+						<?php } //while de fetch assoc ?>
 					</tbody>
+					<?php $conn->close(); //Cierra la conexión ?>
 					</table>
               	</div>
 			</div>

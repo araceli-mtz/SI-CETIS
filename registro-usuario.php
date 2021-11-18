@@ -37,7 +37,7 @@
                                 <label class="control-label" for="user_usuario">Usuario*:</label>
                                 <div class="input-group">
                                     <span class="input-group-addon icon-user" aria-hidden="true"></span>
-                                    <input type="text" name="user_usuario" value="" id="user_usuario" data-validation="required" placeholder="Nombre de Usuario" class="form-control"/>
+                                    <input type="text" onkeyup="mayus(this);" name="user_usuario" value="" id="user_usuario" data-validation="required" placeholder="Nombre de Usuario" class="form-control"/>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                                 <label class="control-label" for="user_nombre">Nombre*:</label>
                                 <div class="input-group">
                                     <span class="input-group-addon icon-user" aria-hidden="true"></span>
-                                    <input type="text" name="user_nombre" value="" id="user_nombre" data-validation="required" placeholder="Nombre" class="form-control"/>
+                                    <input type="text" onkeyup="mayus(this);" name="user_nombre" value="" id="user_nombre" data-validation="required" placeholder="Nombre" class="form-control"/>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                 <label class="control-label" for="user_app">Apellido Paterno*:</label>
                                 <div class="input-group">
                                     <span class="input-group-addon icon-user" aria-hidden="true"></span>
-                                    <input type="text" name="user_app" value="" id="user_app" data-validation="required" placeholder="Apellido Paterno" class="form-control"/>
+                                    <input type="text" onkeyup="mayus(this);" name="user_app" value="" id="user_app" data-validation="required" placeholder="Apellido Paterno" class="form-control"/>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                                 <label class="control-label" for="user_apm">Apellido Materno*:</label>
                                 <div class="input-group">
                                     <span class="input-group-addon icon-user" aria-hidden="true"></span>
-                                    <input type="text" name="user_apm" value="" id="user_apm" data-validation="required" placeholder="Apellido Materno" class="form-control"/>
+                                    <input type="text" onkeyup="mayus(this);" name="user_apm" value="" id="user_apm" data-validation="required" placeholder="Apellido Materno" class="form-control"/>
                                 </div>
                             </div>
                         </div>

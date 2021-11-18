@@ -22,6 +22,12 @@
     });  
     </script>
 
+    <script>
+        function mayus(e) {
+            e.value = e.value.toUpperCase();
+        }
+    </script>
+
     <!-- Script required by childs -->
 	<!-- Utils JS -->
 	<script src="https://plantel.ambikon.com.mx/assets/js/utils.js"></script>
