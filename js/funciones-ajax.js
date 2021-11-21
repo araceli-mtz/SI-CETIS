@@ -88,3 +88,43 @@ $('.borrar_registro').on('click', function(e) {
         }
     })
 });
+
+//Login
+$('#login').on('submit', function(e) {
+    e.preventDefault();
+    var datos = $(this).serializeArray();
+    $.ajax({
+        type: $(this).attr('method'),
+        data: datos,
+        url: $(this).attr('action'),
+        dataType: 'json',
+        success: function(data) {
+            console.log(data);
+                var resultado = data;
+                if (resultado.respuesta === 'exitoso') {
+                    if (resultado.tipousuario === 1) {
+                        alert("Bienvenido(a) " + resultado.nombre);
+                        setTimeout(function() {
+                            window.location.href = "panel-administrador.php";
+                        }, 500);
+                    } else if (resultado.tipousuario === 2) {
+                        alert("Bienvenido(a) " + resultado.nombre);
+                        setTimeout(function() {
+                            window.location.href = "panel-administrativo.php";
+                        }, 500);
+                    } else {
+                        alert("Inválido");
+                        setTimeout(function() {
+                            location.reload();
+                        }, 500);
+                    }
+                } 
+                else {
+                    alert("El usuario o contraseña son incorrectos");
+                    setTimeout(function() {
+                        location.reload();
+                    }, 500);
+                }  
+        }
+    })
+});

@@ -27,7 +27,7 @@
 				<hr class="red initial"/>
 
 				<div class="col-md-6 col-md-offset-3">
-				<form action="" class="well" id="" method="post" accept-charset="utf-8">
+				<form name="login" id="login" method="POST" action="includes/modelos/modelo-login.php" accept-charset="utf-8">
 					<div class="col-md-12" >
 						<div class="form-group">
 							<label class="control-label" for="usuario_id">Usuario *:</label>
@@ -46,6 +46,8 @@
 								<input type="password" name="usuario_pass" value="" id="usuario_pass" placeholder="Ingresa tu contraseña" data-validation="required" class="form-control" />
 							</div>
 						</div>
+
+						<input type="hidden" name="registro" value="login">
 					</div>
 
 					<!-- FORM BUTTONS -->
@@ -59,9 +61,11 @@
 						<div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
 						<div class="pull-right">
 							<a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
-							<a href="panel-administrador.php"><button type="button" class="btn btn-primary" role="button" aria-label="bottón Enviar">Enviar</button></a>
-							<!--
 							<button type="submit" class="btn btn-primary" role="button" aria-label="bottón Enviar">Enviar</button>
+							<!--
+							<a href="panel-administrador.php">
+							<button type="button" class="btn btn-primary" role="button" aria-label="bottón Enviar">Enviar</button>
+							</a>
 							-->
 						</div>
 					</div>		
