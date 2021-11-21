@@ -41,6 +41,18 @@
 					<p></p>
 				</div>
 
+				<?php 
+					try {
+						//Realiza la conexión
+						require_once('includes/funciones/bd_conexion.php');
+						//Consulta especialidades
+						$sql = " SELECT * FROM especialidades WHERE estatus = 1 and esp_id > 0 ";
+						$resultado = $conn->query($sql);
+					} catch (\Exception $e) {
+						echo $e->getMessage();
+					}
+            	?>
+
 				<div class="table-responsive">
 					<table class="table table-bordered">
 					<thead>
@@ -52,42 +64,17 @@
 						</tr>
 					</thead>
 					<tbody>
+						<?php while($especialidad = $resultado->fetch_assoc() ) {?>
 						<tr>
-							<td>01CO</td>
-							<td class="alinear-tabla">Contabilidad</td>
-							<td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dolore nihil rem nisi atque obcaecati dolor repellat similique ipsum voluptatum beatae unde, ducimus blanditiis expedita harum ea veniam est perspiciatis!</td>
-							<td><a href="editar-especialidad.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-							<td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span></button></td>
+							<td><?php echo $especialidad['esp_id'];?></td>
+							<td class="alinear-tabla"><?php echo $especialidad['esp_nombre'];?></td>
+							<td><?php echo $especialidad['esp_descripcion'];?></td>
+							<td class="center"><a href="editar-especialidad.php?id=<?php echo $especialidad['esp_id']; ?>"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+							<td class="center"><button type="button" class="btn btn-primary borrar_registro" data-tipo="esp" data-id="<?php echo $especialidad['esp_id']; ?>"><span class="glyphicon glyphicon-trash"></span></button></td>
 						</tr>
-						<tr>
-							<td>02OF</td>
-							<td>Ofimática</td>
-							<td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, hic placeat fugiat perferendis beatae, facilis tempora aliquam neque obcaecati animi sed a minus? Sunt eaque voluptatum laboriosam porro deleniti. Repellendus!</td>
-							<td><a href="editar-especialidad.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-							<td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span></button></td>
-						</tr>
-						<tr>
-							<td>03EL</td>
-							<td>Electricidad</td>
-							<td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus, suscipit commodi? Natus tempore ipsa quae eveniet reiciendis? Ratione est, eos vitae enim corporis aspernatur voluptatum dolorem at impedit provident consectetur.</td>
-							<td><a href="editar-especialidad.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-							<td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span></button></td>
-						</tr>
-						<tr>
-							<td>04LQ</td>
-							<td>Laboratorista Químico</td>
-							<td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, blanditiis nam sed beatae ex ipsa quos, unde temporibus in praesentium nemo, nobis id facere cumque minima nostrum nulla quis ullam.</td>
-							<td><a href="editar-especialidad.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-							<td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span></button></td>
-						</tr>
-						<tr>
-							<td>05RH</td>
-							<td>Recursos Humanos</td>
-							<td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur labore iste expedita, impedit repudiandae non veniam amet distinctio temporibus eveniet velit delectus totam quae laborum sed quam sint ea.</td>
-							<td><a href="editar-especialidad.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-							<td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span></button></td>
-						</tr>
+						<?php } //while de fetch assoc ?>
 					</tbody>
+					<?php $conn->close(); //Cierra la conexión ?>
 					</table>
               	</div>
 

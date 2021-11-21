@@ -98,7 +98,7 @@ if($_POST['registro'] == 'editar'){
 
 if($_POST['registro'] == 'eliminar'){
     //die(json_encode($_POST));
-    $usuario_id = $_POST['user_id'];
+    $usuario_id = $_POST['id'];
 
     try {
         $stmt = $conn->prepare("UPDATE usuarios SET estatus = 0, usuario_editado = NOW() WHERE usuario_id = ? ");

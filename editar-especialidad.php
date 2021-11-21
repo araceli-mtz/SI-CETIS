@@ -10,6 +10,22 @@
     <!--Barra de Navegación-->
     <?php include 'includes/templates/barra-interna-admin.php'; ?>
 
+    <?php
+        $id = $_GET['id'] ;
+
+        if(!filter_var($id, FILTER_VALIDATE_INT)) {
+          die("Error!");
+        }
+        ?>
+        <?php
+          //Realiza la conexión
+		  require_once('includes/funciones/bd_conexion.php');
+
+          $sql = "SELECT * FROM especialidades WHERE esp_id = $id ";
+          $resultado = $conn->query($sql);
+          $especialidad = $resultado->fetch_assoc();
+    ?>
+
     <!--Contenido-->
     <div class="container">
         <!--Menú de navegación-->
@@ -29,7 +45,7 @@
 				<h2> Editar Especialidad </h2>
 				<hr class="red initial"/>				
 
-				<form action="" id="" method=""accept-charset="utf-8">
+				<form action="includes/modelos/modelo-esp.php" name="editar-registro" id="editar-registro" method="POST">
                     
                     <div class="row">
                         <div class="col-md-3 col-md-offset-1">
@@ -37,7 +53,7 @@
                                 <label class="control-label" for="esp_id">CLAVE*:</label>
                                 <div class="input-group">
                                     <span class="input-group-addon icon-user" aria-hidden="true"></span>
-                                    <input type="text" name="esp_id" value="" id="esp_id" data-validation="required" placeholder="Clave de Especialidad" maxlength="4" minlength="4" class="form-control"/>
+                                    <input type="text" name="esp_id" value="<?php echo $especialidad['esp_id'];?>" id="esp_id" data-validation="required" placeholder="Clave de Especialidad" maxlength="4" minlength="4" class="form-control" disabled/>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +63,7 @@
                                 <label class="control-label" for="esp_nombre">Nombre*:</label>
                                 <div class="input-group">
                                     <span class="input-group-addon icon-user" aria-hidden="true"></span>
-                                    <input type="text" name="esp_nombre" value="" id="esp_nombre" data-validation="required" placeholder="Nombre de Especialidad" class="form-control"/>
+                                    <input type="text" name="esp_nombre" value="<?php echo $especialidad['esp_nombre'];?>" id="esp_nombre" data-validation="required" placeholder="Nombre de Especialidad" class="form-control"/>
                                 </div>
                             </div>
                         </div>
@@ -58,10 +74,22 @@
                                 <div class="input-group">
                                     <span class="input-group-addon icon-user" aria-hidden="true"></span>
                                     <select id="esp_estatus" name="esp_estatus" data-validation="required" class="form-control">
-                                        <option selected="true" disabled="disabled">--Seleccione--</option>
-                                        <option value="0">Baja</option>
-                                        <option value="1">Activa</option>
+                                        <?php
+                                        if($especialidad['estatus']==="1"){ ?>
+                                            <option selected="true" value="1">Activa</option>
+                                            <option value="0">Baja</option>
+                                        <?php } elseif ($especialidad['estatus']==="0") { ?>
+                                            <option value="1">Activa</option>
+                                            <option selected="true" value="0">Baja</option>
+                                        <?php } else { ?>
+                                            <option value="2" selected="true" disabled="disabled" >-- Seleccione --</option>
+                                            <option value="1">Activa</option>
+                                            <option value="0">Baja</option>
+                                        <?php } ?>
                                     </select>
+
+                                    <input type="hidden" name="registro" value="editar">
+                                    <input type="hidden" name="esp_id" value="<?php echo $especialidad['esp_id'];?>">
                                 </div>
                             </div>
                         </div>
@@ -71,7 +99,7 @@
                         <div class="col-md-10 col-md-offset-1">
                             <div class="form-group">
                                 <label class="control-label" for="esp_descripcion">Descripción*:</label>
-                                <textarea class="form-control" name="esp_descripcion" id="esp_descripcion" placeholder="Área de texto" rows="4"></textarea>
+                                <textarea class="form-control" name="esp_descripcion" id="esp_descripcion" placeholder="Área de texto" rows="4"><?php echo $especialidad['esp_descripcion'];?></textarea>
                             </div>
                         </div>
                     </div>

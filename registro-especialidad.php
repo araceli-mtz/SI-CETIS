@@ -29,10 +29,11 @@
 				<h2> Registro de Especialidad </h2>
 				<hr class="red initial"/>				
 
-				<form action="" id="" method=""accept-charset="utf-8">
+				<form name="crear-registro" id="crear-registro" method="POST" action="includes/modelos/modelo-esp.php" accept-charset="utf-8">
                     
                     <div class="row">
-                        <div class="col-md-4 col-md-offset-1">
+                        <!--
+                             <div class="col-md-4 col-md-offset-1">
                             <div class="form-group">
                                 <label class="control-label" for="esp_id">CLAVE*:</label>
                                 <div class="input-group">
@@ -41,8 +42,10 @@
                                 </div>
                             </div>
                         </div>
+                        -->
+                       
 
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-md-offset-1">
                             <div class="form-group">
                                 <label class="control-label" for="esp_nombre">Nombre*:</label>
                                 <div class="input-group">
@@ -60,6 +63,8 @@
                                 <textarea class="form-control" name="esp_descripcion" id="esp_descripcion" placeholder="Área de texto" rows="4"></textarea>
                             </div>
                         </div>
+
+                        <input type="hidden" name="registro" value="nuevo">
                     </div>
 
                     <!-- BOTONES -->

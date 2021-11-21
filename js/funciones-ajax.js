@@ -13,11 +13,17 @@ $(document).ready(function() {
                 console.log(data);
                 var resultado = data;
                 if (resultado.respuesta === 'exitoso') {
-                    alert("Usuario registrado correctamente n.n");
+                    alert("Usuario registrado correctamente");
                     setTimeout(function() {
                         location.reload();
                     }, 500);
-                } else {
+                } else if(resultado.respuesta === 'esp_exitoso') {
+                    alert("Especialidad registrada correctamente");
+                    setTimeout(function() {
+                        location.reload();
+                    }, 500); 
+                }
+                else {
                     alert("El usuario ya existe");
                     setTimeout(function() {
                         location.reload();
@@ -63,7 +69,7 @@ $('.borrar_registro').on('click', function(e) {
     $.ajax({
         type: 'post',
         data: {
-            user_id: id,
+            id: id,
             registro: 'eliminar'
         },
         url: 'includes/modelos/modelo-' + tipo + '.php',

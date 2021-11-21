@@ -15,6 +15,19 @@
                 </a>
             </div>
 
+            
+            <?php 
+                try {
+                    //Realiza la conexión
+                    require_once('includes/funciones/bd_conexion.php');
+                    //Consulta especialidades
+                    $sql = " SELECT esp_id, esp_nombre FROM especialidades WHERE estatus = 1 and esp_id > 0 ";
+                    $resultado = $conn->query($sql);
+                } catch (\Exception $e) {
+                    echo $e->getMessage();
+                }
+            ?>
+
             <!--Sub Enlaces-->
             <div class="collapse navbar-collapse" id="subenlaces">
                 <ul class="nav navbar-nav navbar-left">
@@ -35,12 +48,15 @@
                             <li class="dropdown dropdown-submenu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Oferta educativa</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="especialidades.php"> Contabilidad </a></li>
-                                    <li><a href="especialidades.php"> Ofimática </a></li>
-                                    <li><a href="especialidades.php"> Electricidad </a></li>
-                                    <li><a href="especialidades.php"> Laboratorista Químico </a></li>
-                                    <li><a href="especialidades.php"> Recursos Humanos </a></li>
+                                
+                                <?php while($especialidad = $resultado->fetch_assoc() ) {?>
+                                    <li><a href="especialidades.php?id=<?php echo $especialidad['esp_id'];?>"> <?php echo $especialidad['esp_nombre'];?> </a></li>
+                                <?php } //while de fetch assoc ?>
+
+                                
+                                
                                 </ul>
+                                
                             </li>
                             <li><a href="proceso.php">Proceso de admisión</a></li>
                             <li><a href="login-aspirante.php">Acceder como aspirante</a></li>
