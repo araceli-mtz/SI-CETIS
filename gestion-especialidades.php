@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="col-lg-8 col-md-6 col-sm-6">
 				<ol class="breadcrumb" aria-label="historial de navegación">
-					<li><a href="index.php"><i class="icon icon-home"></i></a></li>
+					<li><a href="panel-administrador.php"><i class="icon icon-home"></i></a></li>
 					<li><a href="panel-administrador.php" aria-label=""> Inicio </a></li>
 					<li class=active><a href="#" role="button" aria-label=""> Gestión de Especialidades </a></li>
 				</ol>

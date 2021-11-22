@@ -21,6 +21,7 @@ if($_POST['registro'] == 'login'){
                     session_start();
                     $_SESSION['usuario'] = $usuario_usuario;
                     $_SESSION['nombre'] = $usuario_nombre;
+                    $_SESSION['tipousuario'] = $usuario_tipousuario_id;
 
                     $respuesta = array(
                         'respuesta' => 'exitoso',

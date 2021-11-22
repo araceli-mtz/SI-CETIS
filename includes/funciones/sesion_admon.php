@@ -6,7 +6,10 @@ function usuario_autenticado() {
     }
 }
 function revisar_usuario() {
-    return isset($_SESSION['usuario']);
+    $usuario_admin = $_SESSION['tipousuario'];
+    if ($usuario_admin == 2) {
+        return isset($usuario_admin);
+    } 
 }
 session_start();
 usuario_autenticado();
