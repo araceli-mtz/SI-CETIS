@@ -1,5 +1,6 @@
 <?php 
-  include 'includes/templates/header.php';
+  	include 'includes/funciones/sesion_admin.php';
+	include 'includes/templates/header.php';
   //include 'includes/funciones/bd_conexion.php';
 ?>
 

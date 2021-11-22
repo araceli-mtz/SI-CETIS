@@ -8,7 +8,7 @@
     <main class="page">
     
     <!--Barra de Navegación-->
-    <?php include 'includes/templates/barra-interna.php'; ?>
+    <?php include 'includes/templates/barra-interna-admon.php'; ?>
 
     <!--Contenido-->
     <div class="container">

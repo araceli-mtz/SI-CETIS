@@ -1,6 +1,6 @@
-<?php 
-  include 'includes/templates/header.php';
-  //include 'includes/funciones/bd_conexion.php';
+<?php 	
+	include 'includes/templates/header.php';
+    //include 'includes/funciones/bd_conexion.php';
 ?>
 
 <body>
@@ -24,16 +24,18 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h2> Inicio Sesión - Personal </h2>
+				
 				<hr class="red initial"/>
 
 				<div class="col-md-6 col-md-offset-3">
 				<form name="login" id="login" method="POST" action="includes/modelos/modelo-login.php" accept-charset="utf-8">
+					
 					<div class="col-md-12" >
 						<div class="form-group">
 							<label class="control-label" for="usuario_id">Usuario *:</label>
 							<div class="input-group">
 								<span class="input-group-addon icon-user" aria-hidden="true" ></span>
-								<input type="text" name="usuario_id" value="" id="usuario_id" placeholder="Ingresa tu usuario" maxlength="" data-validation="required" class="form-control"/>
+								<input type="text" onkeyup="mayus(this);" name="usuario_id" value="" id="usuario_id" placeholder="Ingresa tu usuario" maxlength="" data-validation="required" class="form-control"/>
 							</div>			
 						</div>
 					</div>	

@@ -18,6 +18,10 @@ if($_POST['registro'] == 'login'){
             $existe = $stmt->fetch();
             if($existe) {
                 if(password_verify($password, $usuario_pass)) {
+                    session_start();
+                    $_SESSION['usuario'] = $usuario_usuario;
+                    $_SESSION['nombre'] = $usuario_nombre;
+
                     $respuesta = array(
                         'respuesta' => 'exitoso',
                         'tipousuario' => $usuario_tipousuario_id,
@@ -33,6 +37,8 @@ if($_POST['registro'] == 'login'){
                     'respuesta' => 'error'
                 );
             }
+            $stmt->close();
+            $conn->close();
         }
     } catch (Exception $e) {
         $respuesta = array(

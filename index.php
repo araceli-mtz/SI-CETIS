@@ -1,4 +1,9 @@
-<?php 
+<?php
+    session_start();
+	if(isset($_GET['cerrar_sesion'])){
+		session_destroy();
+	}
+
   include 'includes/templates/header.php';
   //include 'includes/funciones/bd_conexion.php';
 ?>

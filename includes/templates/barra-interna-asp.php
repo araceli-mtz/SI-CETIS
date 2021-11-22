@@ -19,14 +19,14 @@
             <div class="collapse navbar-collapse" id="subenlaces">
                 <ul class="nav navbar-nav navbar-left">
                     <li class="dropdown">
-                        <a href="panel-administrador.php" class="dropdown-toggle">
+                        <a href="panel-aspirante.php" class="dropdown-toggle">
                             <span class="glyphicon glyphicon-th-large"></span>
                             Panel Principal
                         </a>
                     </li>
 
                     <li class="dropdown">
-                        <a href="index.php?cerrar_sesion=true" class="dropdown-toggle">
+                        <a href="index.php" class="dropdown-toggle">
                             <span class="glyphicon glyphicon-log-in"></span>
                             Cerrar Sesión
                         </a>
