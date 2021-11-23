@@ -55,7 +55,7 @@
         </ul>
 
         <!-- Formulario de datos -->
-        <form action="" id="" method=""accept-charset="utf-8">
+        <form name="crear-registro" id="crear-registro" method="POST" action="includes/modelos/modelo-asp.php" accept-charset="utf-8">
             <!--Info Gral-->
             <section class="tabs-step">
                 <h3>Datos Generales del Aspirante</h3>
@@ -641,6 +641,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <input type="hidden" name="registro" value="nuevo">
                 </div>
 
 

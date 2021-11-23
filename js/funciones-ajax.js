@@ -22,12 +22,14 @@ $(document).ready(function() {
                     setTimeout(function() {
                         location.reload();
                     }, 500); 
-                }
+                } else if(resultado.respuesta === 'existe_asp') {
+                    alert("Ya existe un registro para el aspirante:");
+                } 
                 else {
-                    alert("El usuario ya existe");
+                    /*alert("El usuario ya existe");
                     setTimeout(function() {
                         location.reload();
-                    }, 500);
+                    }, 500);*/
                 }    
             }
         })
