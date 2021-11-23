@@ -53,7 +53,7 @@
                                     <li><a href="especialidades.php?id=<?php echo $especialidad['esp_id'];?>"> <?php echo $especialidad['esp_nombre'];?> </a></li>
                                 <?php } //while de fetch assoc ?>
 
-                                
+                                y
                                 
                                 </ul>
                                 

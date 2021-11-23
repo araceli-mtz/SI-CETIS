@@ -47,7 +47,7 @@
 						//Realiza la conexión
 						require_once('includes/funciones/bd_conexion.php');
 						//Consulta usuarios
-						$sql = " SELECT * FROM usuarios WHERE estatus = 1 and usuario_id > 0 ";
+						$sql = " SELECT * FROM usuarios WHERE estatus = 1 and usuario_id > 0 and usuario_tipousuario_id < 3 ";
 						$resultado = $conn->query($sql);
 					} catch (\Exception $e) {
 						echo $e->getMessage();
