@@ -1,4 +1,5 @@
 <?php 
+  include 'includes/funciones/sesion_asp.php';
   include 'includes/templates/header.php';
   //include 'includes/funciones/bd_conexion.php';
 ?>

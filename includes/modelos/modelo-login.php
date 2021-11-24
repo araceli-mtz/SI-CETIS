@@ -50,5 +50,45 @@ if($_POST['registro'] == 'login'){
     die(json_encode($respuesta));
 }
 
+if($_POST['registro'] == 'login-asp'){
+    
+    $usuario = $_POST['curp'];
+
+    try {
+        $stmt = $conn->prepare("SELECT * FROM usuarios WHERE usuario_usuario = ?;");
+        $stmt->bind_param("s", $usuario);
+        $stmt->execute();
+        $stmt->bind_result($usuario_id, $usuario_pass, $usuario_tipousuario_id, $usuario_usuario, $usuario_nombre, $usuario_app, $usuario_apm, $usuario_editado, $estatus);
+
+        if($stmt->affected_rows){
+            $existe = $stmt->fetch();
+            if($existe) {
+                session_start();
+                $_SESSION['usuario'] = $usuario_usuario;
+                $_SESSION['nombre'] = $usuario_nombre;
+                $_SESSION['tipousuario'] = $usuario_tipousuario_id;
+
+                $respuesta = array(
+                    'respuesta' => 'exitoso',
+                    'tipousuario' => $usuario_tipousuario_id,
+                    'nombre' => $usuario_nombre
+                );
+            }else{
+                $respuesta = array(
+                    'respuesta' => 'aspirante_no_existe'
+                );
+            }
+            $stmt->close();
+            $conn->close();
+        }
+    } catch (Exception $e) {
+        $respuesta = array(
+            'respuesta' => $e->getMessage()
+        );
+    }
+
+    die(json_encode($respuesta));
+}
+
 
 

@@ -105,7 +105,7 @@ if ($_POST['registro'] == 'nuevo') {
                         );
                     }
 
-                    /*Consultar id Aspirante*/
+                    /*Consultar Id Usuario-Aspirante*/
                     try {
                         /*Verificar si existe registro de secundaria*/
                         $stmt_aspid = $conn->prepare("SELECT usuario_id FROM usuarios where usuario_usuario = '$asp_curp' ");
@@ -178,8 +178,6 @@ if ($_POST['registro'] == 'nuevo') {
                     } catch (Exception $e) {
                         $respuesta = array('respuesta' => $e->getMessage());
                     }
-
-
 
                 } else {
                     $respuesta = array(

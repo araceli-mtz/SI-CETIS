@@ -26,7 +26,7 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="index.php" class="dropdown-toggle">
+                        <a href="index.php?cerrar_sesion=true" class="dropdown-toggle">
                             <span class="glyphicon glyphicon-log-in"></span>
                             Cerrar Sesión
                         </a>

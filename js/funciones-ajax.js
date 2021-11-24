@@ -116,13 +116,23 @@ $('#login').on('submit', function(e) {
                         setTimeout(function() {
                             window.location.href = "panel-administrativo.php";
                         }, 500);
+                    } else if (resultado.tipousuario === 3) {
+                        alert("Bienvenido(a) " + resultado.nombre);
+                        setTimeout(function() {
+                            window.location.href = "panel-aspirante.php";
+                        }, 500);
                     } else {
                         alert("Inválido");
                         setTimeout(function() {
                             location.reload();
                         }, 500);
                     }
-                } 
+                } else if (resultado.respuesta === 'aspirante_no_existe') {
+                    alert("La CURP que ha ingresado no ha sido registrada");
+                    setTimeout(function() {
+                        location.reload();
+                    }, 500);
+                }
                 else {
                     alert("El usuario o contraseña son incorrectos");
                     setTimeout(function() {

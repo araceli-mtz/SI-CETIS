@@ -31,7 +31,8 @@
 				<p class="text-justify">Ingresa tu CURP para comenzar tus trámites. Si tienes dudas sobre el procedimiento, puedes comunicarte con tu plantel.</p>
 
                 <div class="col-md-6 col-md-offset-3">
-                    <form action="" class="well" id="" method="" accept-charset="utf-8">
+
+                <form name="login" id="login" method="POST" action="includes/modelos/modelo-login.php" accept-charset="utf-8">
                     
                         <div class="col-md-12" >
                             <div class="form-group">
@@ -39,7 +40,9 @@
                                 <div class="input-group">
                                     <span class="input-group-addon icon-font-lock" aria-hidden="true" ></span>
                                     <input type="text" name="curp" value="" id="curp" placeholder="Ingresa tu CURP" data-validation="required" class="form-control"/>
-                                </div>          
+                                </div> 
+                                
+                                <input type="hidden" name="registro" value="login-asp">
                             </div>
                         </div>
                     
@@ -54,10 +57,11 @@
                             <div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
                             <div class="pull-right">
                                 <a class="btn btn-link" target="_blank" role="button" aria-label="Abrir enlace privacidad" href="#">Aviso de privacidad</a>
-                                <a href="panel-aspirante.php"><button type="button" class="btn btn-primary" role="button" aria-label="bottón Enviar">Enviar</button></a>
+                                <button type="submit" class="btn btn-primary" role="button" aria-label="bottón Enviar">Enviar</button>
                                 <!--
                                 <button type="submit" class="btn btn-primary" role="button" aria-label="bottón Enviar">Enviar</button>
                                 -->
+
                             </div>
                         </div>
                     </form>
