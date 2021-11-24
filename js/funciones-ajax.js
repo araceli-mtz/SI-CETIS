@@ -10,7 +10,7 @@ $(document).ready(function() {
             url: $(this).attr('action'),
             dataType: 'json',
             success: function(data) {
-                console.log(data);
+                //console.log(data);
                 var resultado = data;
                 if (resultado.respuesta === 'exitoso') {
                     alert("Usuario registrado correctamente");
@@ -22,6 +22,8 @@ $(document).ready(function() {
                     setTimeout(function() {
                         location.reload();
                     }, 500); 
+                } else if(resultado.respuesta === 'aspirante_insertado') {
+                    alert("¡FELICIDADES! Haz completado tu registro correctamente:");
                 } else if(resultado.respuesta === 'existe_asp') {
                     alert("Ya existe un registro para el aspirante:");
                 } 

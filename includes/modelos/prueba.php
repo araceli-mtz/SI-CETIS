@@ -98,6 +98,22 @@ if ($_POST['registro'] == 'nuevo') {
                         );
                     }
 
+                    /*Consultar Id de Usuario */
+                    try {
+                        $stmt_aspid = $conn->prepare("SELECT usuario_id FROM usuarios where usuario_usuario = '$asp_curp' ");
+                        $stmt_aspid->execute();
+                        $stmt_aspid->bind_result($usuario_id);
+                        if ($stmt_aspid->affected_rows) {
+                            $asignacion_usuario_id = $usuario_id;
+                            
+                            $stmt_aspid->close(); 
+                        } else { }
+                    } catch (Exception $e) {
+                        $respuesta = array(
+                            'respuesta' => $e->getMessage()
+                        );
+                    }
+
                     /*Registro de Tutor */
                     try {
                         /* Verificar si existe registro de tutor */

@@ -28,14 +28,31 @@ if ($_POST['registro'] == 'nuevo') {
     $tutor_tel = $_POST['tutor_tel'];
     $tutor_cel = $_POST['tutor_cel'];
 
+    $asp_fnac = $_POST['date'];
+    $asp_sexo = $_POST['asp_sexo'];
+    $asp_correo = $_POST['asp_correo'];
+    $asp_tel = $_POST['asp_tel_fijo'];
+    $asp_cel = $_POST['asp_tel_movil'];
+    $asp_dir_cp = $_POST['dom_cp'];
+    $asp_dir_edo = $_POST['dom_edo'];
+    $asp_dir_mpio = $_POST['dom_mpio'];
+    $asp_dir_col = $_POST['dom_col'];
+    $asp_dir_calle = $_POST['dom_calle'];
+    $asp_dir_num = $_POST['dom_num'];
+
+    $op1 = $_POST['esp_op1'];
+    $op2 = $_POST['esp_op2'];
+    $op3 = $_POST['esp_op3'];
+
     $estatus = 1;
 
     /*Verificar si existe registro de aspirante*/
     $stmt_asp = $conn->prepare("SELECT usuario_usuario FROM usuarios where usuario_usuario = '$asp_curp' ");
     $stmt_asp->execute();
-    $stmt_asp->bind_result($asp_curp);
+    $stmt_asp->bind_result($asp_curp_1);
     if ($stmt_asp->affected_rows) {
         $existe = $stmt_asp->fetch();
+        
         if ($existe) {
             /*Rediregir aspirante a inicio de sesión*/
             $respuesta = array('respuesta' => 'existe_asp');
@@ -45,6 +62,7 @@ if ($_POST['registro'] == 'nuevo') {
                 $stmt_user = $conn->prepare("INSERT INTO usuarios (usuario_tipousuario_id, usuario_usuario, usuario_nombre, usuario_app, usuario_apm, estatus) VALUES (?, ?, ?, ?, ?, ?)");
                 $stmt_user->bind_param("issssi", $usuario_tipousuario_id, $asp_curp, $asp_nombre, $asp_app, $asp_apm, $estatus);
                 $stmt_user->execute();
+
                 if ($stmt_user->affected_rows) {
 
                     /*Registro de Secundaria */
@@ -87,6 +105,25 @@ if ($_POST['registro'] == 'nuevo') {
                         );
                     }
 
+                    /*Consultar id Aspirante*/
+                    try {
+                        /*Verificar si existe registro de secundaria*/
+                        $stmt_aspid = $conn->prepare("SELECT usuario_id FROM usuarios where usuario_usuario = '$asp_curp' ");
+                        $stmt_aspid->execute();
+                        $stmt_aspid->bind_result($id_usuario);
+                        if ($stmt_aspid->affected_rows) {
+                            $existe_aspid = $stmt_aspid->fetch();
+
+                            $id_insertado = $id_usuario;
+                            $stmt_aspid->close();
+
+                        } else { }
+                    } catch (Exception $e) {
+                        $respuesta = array(
+                            'respuesta' => $e->getMessage()
+                        );
+                    }
+
                     /*Registro de Tutor */
                     try {
                         /* Verificar si existe registro de tutor */
@@ -106,9 +143,9 @@ if ($_POST['registro'] == 'nuevo') {
                                     $stmt_tutor_nuevo->bind_param("sssssssi", $tutor_curp, $tutor_nombre, $tutor_app, $tutor_apm, $tutor_ocup, $tutor_tel, $tutor_cel, $estatus);
                                     $stmt_tutor_nuevo->execute();
                                     if($stmt_tutor_nuevo->affected_rows) {
-                                        $respuesta = array('respuesta' => 'tutor_insertado');
+                                        //$respuesta = array('respuesta' => 'tutor_insertado', 'asp_id' => $id_insertado);
                                     } else {
-                                        $respuesta = array('respuesta' => 'tutor_NO_insertada');
+                                        //$respuesta = array('respuesta' => 'tutor_NO_insertada');
                                     }
                                     $stmt_tutor_nuevo->close();
                                     
@@ -125,6 +162,24 @@ if ($_POST['registro'] == 'nuevo') {
                             'respuesta' => $e->getMessage()
                         );
                     }
+
+                    /*Crear Aspirante*/
+                    try {
+                        $stmt_asp_nuevo = $conn->prepare("INSERT INTO aspirantes (asp_fnac, asp_sexo, asp_correo, asp_tel, asp_cel, asp_dir_cp, asp_dir_edo, asp_dir_mpio, asp_dir_col, asp_dir_calle, asp_dir_num, asp_id_usuario, asp_id_sec, asp_id_tutor, estatus, op1, op2, op3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                        $stmt_asp_nuevo->bind_param("sissssiisssissiiii", $asp_fnac, $asp_sexo, $asp_correo, $asp_tel, $asp_cel, $asp_dir_cp, $asp_dir_edo, $asp_dir_mpio, $asp_dir_col, $asp_dir_calle, $asp_dir_num, $id_insertado, $sec_clave, $tutor_curp, $estatus, $op1, $op2, $op3);
+                        $stmt_asp_nuevo->execute();
+                        if($stmt_asp_nuevo->affected_rows) {
+                            $respuesta = array('respuesta' => 'aspirante_insertado');
+                        } else {
+                            $respuesta = array('respuesta' => 'aspirante_NO_insertado');
+                        }
+                        $stmt_asp_nuevo->close();
+                        
+                    } catch (Exception $e) {
+                        $respuesta = array('respuesta' => $e->getMessage());
+                    }
+
+
 
                 } else {
                     $respuesta = array(
