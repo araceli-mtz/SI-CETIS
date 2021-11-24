@@ -925,3 +925,9 @@ a.list-group-item p {
 .center{
     text-align: center;
 }
+
+.sin_borde{
+    border: none;
+    box-shadow: none;
+    transition: none;
+ }

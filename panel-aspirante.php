@@ -25,7 +25,7 @@
 				<div class="time text-center">
 					<br>
 						<span class="glyphicon glyphicon-user"></span>
-						Bienvenido(a) <strong>USUARIO</strong>
+						Bienvenido(a) <strong><?php echo $_SESSION['nombre']?></strong>
 					</span>
 				</div>
 			</div>
@@ -40,21 +40,34 @@
 
 			<!--Menú-->
 			<div class="col-md-12">
-				<a href="#"  class="module-btn text-center">
+				
+				<a href="info-aspirante.php"  class="module-btn text-center">
+					<div class="col-md-4 col-sm-8 well panel-0">
+						<div class="module-content">
+							<span class="glyphicon icon-infocircle" aria-hidden="true"></span>
+							
+							<h4>Paso 1</h4>
+							<h5>Verifica tu información personal</h5>
+						</div>
+					</div>
+				</a> 
+
+				<a href="ficha_asp.pdf" target="_blank" class="module-btn text-center">
 					<div class="col-md-4 col-sm-8 well panel-0">
 						<div class="module-content">
 							<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
 							
-							<h4>Paso 1</h4>
+							<h4>Paso 2</h4>
 							<h5>Descargar comprobante de registro</h5>
 						</div>
 					</div>
 				</a> 
+
 				<a href="#"  class="module-btn text-center">
 					<div class="col-md-4 col-sm-8 well panel-0">
 						<div class="module-content">
 							<span class="icon-tramite" aria-hidden="true"></span>
-							<h4>Paso 2</h4>
+							<h4>Paso 3</h4>
 							<h5>Registrar pago de ficha de examen</h5>
 						</div>
 					</div>
@@ -63,7 +76,7 @@
 					<div class="col-md-4 col-sm-8 well panel-0">
 						<div class="module-content">
 							<span class="glyphicon glyphicon-file" aria-hidden="true"></span>
-							<h4>Paso 3</h4>
+							<h4>Paso 4</h4>
 							<h5>Cargar documentación de aspirante</h5>
 						</div>
 					</div>

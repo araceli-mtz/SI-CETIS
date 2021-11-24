@@ -25,7 +25,7 @@
 				<div class="time text-center">
 					<br>
 						<span class="glyphicon glyphicon-user"></span>
-						Bienvenido(a) <strong>USUARIO</strong>
+						Bienvenido(a) <strong><?php echo $_SESSION['nombre']?></strong>
 					</span>
 				</div>
 			</div>
