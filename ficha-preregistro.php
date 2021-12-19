@@ -1,5 +1,5 @@
 <?php
-require_once('vendor/autoload.php');
+require_once('pruebas/vendor/autoload.php');
 ini_set('date.timezone','America/Mexico_City');
 $fecha = date("d-m-Y", time());
 $mpdf = new \Mpdf\Mpdf([]);
