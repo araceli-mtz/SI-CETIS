@@ -29,6 +29,30 @@
 				<h2> Gestión de Aspirantes </h2>
 				<hr class="red initial"/>
 
+				<div class="table-responsive">
+					<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th class="center">CURP</th>
+							<th class="center">NOMBRE</th>
+							<th class="center">APELLIDO PATERNO</th>
+							<th class="center">APELLIDO MATERNO</th>
+							<th class="center">ACCIONES</th>
+							<th class="center">ESTATUS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>MALA980928MVZRNR05</td>
+							<td>ARACELI</td>
+							<td>MARTINEZ</td>
+							<td>LUNA</td>
+							<td class="center"><a href="info-aspirante-admon.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-eye-open"></span></button></a></td>
+							<td class="center">REGISTRADO</td>
+						</tr>
+					</tbody>
+					</table>
+              	</div>
 				
 			</div>
 		</div>

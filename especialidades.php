@@ -16,7 +16,7 @@ include 'includes/templates/header.php';
     if (!filter_var($id, FILTER_VALIDATE_INT)) {
       die("Error!");
     }
-    ?>
+    ?> 
     <?php
     //Realiza la conexión
     require_once('includes/funciones/bd_conexion.php');
@@ -60,13 +60,6 @@ include 'includes/templates/header.php';
               <div class="information">
                 <h3 style="text-align:justify;">Justificación de la carrera</h3>
                 <p style="text-align:justify;"><?php echo $especialidad2['esp_descripcion']; ?></p>
-                <h3 style="text-align:justify;">Perfil de Ingreso</h3>
-                <p style="text-align:justify;"><?php echo $especialidad2['esp_descripcion']; ?></p>
-                <h3 style="text-align:justify;">Perfil de Egreso</h3>
-                <p style="text-align:justify;"><?php echo $especialidad2['esp_descripcion']; ?></p>
-                <h3 style="text-align:justify;">Campo de Acción / Campo Laboral</h3>
-                <p style="text-align:justify;"><?php echo $especialidad2['esp_descripcion']; ?></p>
-                
               </div>
             </div>
 

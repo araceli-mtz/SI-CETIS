@@ -1,0 +1,132 @@
+body {
+  position: relative;
+  width: 21cm;  
+  height: 29.7cm; 
+  margin: 0 auto; 
+  color: #001028;
+  background-color: #FFFFFF; 
+  font-family: Arial, sans-serif; 
+  font-size: 12px; 
+  font-family: Arial;
+}
+
+#logo {
+  text-align: left;
+}
+
+#logo img {
+  width: 280px;
+}
+
+#logo2 img {
+  width: 100px;
+}
+
+.remove {
+  padding: 5px;
+  font-size: 12px;
+}
+
+h1 {
+  border-top: 1px solid #5D6975;
+  border-bottom: 1px solid #5D6975;
+  color: #5D6975;
+  font-size: 2em;
+  line-height: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  font-weight: bold;
+}
+
+table {
+  margin-bottom: 20px;
+}
+
+.ancho{
+  width: 100%;
+}
+
+table th {
+  padding: 15px 20px;
+  color: #5D6975;
+  white-space: nowrap;        
+  font-weight: normal;
+}
+
+table td.grand {
+  border-top: 1px solid #5D6975;;
+}
+
+footer {
+  color: #5D6975;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-top: 1px solid #C1CED9;
+  padding: 8px 0;
+  text-align: center;
+}
+
+.remove {
+  font-size: 12px;
+}
+
+.alineacion div{
+  text-align: right;
+}
+
+.negrita{
+  font-weight: bold;
+}
+
+.borde{
+  border: ridge #000 1px;
+  text-align: center;
+}
+
+.logo-cetis{
+  background: url(img/cetis.JFIF);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.logo-cetis2{
+  background: url(img/educacion.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fondo{
+  background: url(img/marca-agua.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+span {
+  font-weight: bold;
+}
+
+h2{
+  margin-top: 30px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 18px;
+  color: #48515a;
+}
+
+.linea{
+  width: 33%; 
+  text-align: center; 
+  border-top: 1px solid #001028;
+}
+
+.alineacion{
+  text-align: right;
+}
+
+.datos{
+  width: 33%; 
+  text-align: center;
+}

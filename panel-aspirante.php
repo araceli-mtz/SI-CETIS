@@ -51,17 +51,19 @@
 						</div>
 					</div>
 				</a> 
-
-				<a href="ficha_asp.pdf" target="_blank" class="module-btn text-center">
-					<div class="col-md-4 col-sm-8 well panel-0">
-						<div class="module-content">
-							<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
-							
-							<h4>Paso 2</h4>
-							<h5>Descargar comprobante de registro</h5>
+				<form role="form" name="ficha-pre" id="ficha-pre" method="POST" action="ficha-preregistro.php">
+					<div class="module-btn text-center">
+						<div class="col-md-4 col-sm-8 well panel-0">
+							<button type="submit">
+								<div class="module-content">
+									<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+									<h4>Paso 2</h4>
+									<h5>Descargar comprobante de registro</h5>
+								</div>
+							</button>
 						</div>
 					</div>
-				</a> 
+				</form>
 
 				<a href="#"  class="module-btn text-center">
 					<div class="col-md-4 col-sm-8 well panel-0">
