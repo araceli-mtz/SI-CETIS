@@ -5,8 +5,13 @@ $fecha = date("d-m-Y", time());
 $mpdf = new \Mpdf\Mpdf([]);
 
 $css = file_get_contents('css/style-ficha.css');
+$usuario = $_POST['id_aspirante'];
 
-//plantilla
+//Realiza la conexión
+require_once('includes/funciones/bd_conexion.php');
+//Consulta
+require_once('includes/funciones/consultas_asp.php');    
+
 $plantilla = '
 <body>
     <header class="clearfix">
@@ -28,17 +33,17 @@ $plantilla = '
     <main class="fondo">
         <table class="ancho">
             <tr>
-                <td style="width: 50%;"><span>FECHA DE REGISTRO:</span> 12/12/2021</td>
-                <td style="width: 50%; text-align: right;"><span>CURP: </span>MALA980928MVZRNR05</td>
+                <td style="width: 50%;"><span>FECHA DE REGISTRO:</span> '. $date .'</td>
+                <td style="width: 50%; text-align: right;"><span>CURP: </span>'.$aspirante['usuario_usuario'].'</td>
             </tr>
         </table>
 
         <h2>Datos generales</h2>
         <table class="ancho">
             <tr>
-                <td class="datos">ARACELI</td>
-                <td class="datos">MARTINEZ</td>
-                <td class="datos">LUNA</td>
+                <td class="datos">'.$aspirante['usuario_nombre'].'</td>
+                <td class="datos">'.$aspirante['usuario_app'].'</td>
+                <td class="datos">'.$aspirante['usuario_apm'].'</td>
             </tr>
             <tr>
                 <td class="linea"><span>Nombre</span></td>
@@ -49,9 +54,9 @@ $plantilla = '
 
         <table class="ancho">
             <tr>
-                <td class="datos">aracelimtzluna098@gmail.com</td>
-                <td class="datos">2251043162</td>
-                <td class="datos">2251043162</td>
+                <td class="datos">'.$aspirante['asp_correo'].'</td>
+                <td class="datos">'.$aspirante['asp_tel'].'</td>
+                <td class="datos">'.$aspirante['asp_cel'].'</td>
             </tr>
             <tr>
                 <td class="linea"><span>Correo Electrónico</span></td>
@@ -63,9 +68,9 @@ $plantilla = '
         <h2>Seleccion de Carrera</h2>
         <table class="ancho">
             <tr>
-                <td class="datos">INFORMÁTICA</td>
-                <td class="datos">CONTABILIDAD</td>
-                <td class="datos">ADMINISTRACIÓN DE RECURSOS HUMANOS</td>
+                <td class="datos">'.$especialidad_op1.'</td>
+                <td class="datos">'.$especialidad_op2.'</td>
+                <td class="datos">'.$especialidad_op3.'</td>
             </tr>
             <tr>
                 <td class="linea"><span>Primera Opción</span></td>
@@ -77,9 +82,9 @@ $plantilla = '
         <h2>Padre, Madre o Tutor</h2>
         <table class="ancho">
             <tr>
-                <td class="datos">LEONILA</td>
-                <td class="datos">LUNA</td>
-                <td class="datos">RUPALDA</td>
+                <td class="datos">'.$aspirante['tutor_nombre'].'</td>
+                <td class="datos">'.$aspirante['tutor_app'].'</td>
+                <td class="datos">'.$aspirante['tutor_apm'].'</td>
             </tr>
             <tr>
                 <td class="linea"><span>Nombre</span></td>
@@ -89,9 +94,9 @@ $plantilla = '
         </table>
         <table class="ancho">
             <tr>
-                <td class="datos">AMA DE CASA</td>
-                <td class="datos">2251046589</td>
-                <td class="datos">2245896454</td>
+                <td class="datos">'.$aspirante['tutor_ocup'].'</td>
+                <td class="datos">'.$aspirante['tutor_tel'].'</td>
+                <td class="datos">'.$aspirante['tutor_cel'].'</td>
             </tr>
             <tr>
                 <td class="linea"><span>Ocupación</span></td>
@@ -103,9 +108,9 @@ $plantilla = '
         <h2>Dirección</h2>
         <table class="ancho">
             <tr>
-                <td class="datos">TRIGAL</td>
-                <td class="datos">9</td>
-                <td class="datos">PREDIO CHIHUAHUA</td>
+                <td class="datos">'.$aspirante['asp_dir_calle'].'</td>
+                <td class="datos">'.$aspirante['asp_dir_num'].'</td>
+                <td class="datos">'.$aspirante['asp_dir_col'].'</td>
             </tr>
             <tr>
                 <td class="linea"><span>Calle</span></td>
@@ -116,9 +121,9 @@ $plantilla = '
         </table>
         <table class="ancho">
             <tr>
-                <td class="datos">TLAPACOYAN</td>
-                <td class="datos">VERACRUZ</td>
-                <td class="datos">93650</td>
+                <td class="datos">'.$aspirante['asp_dir_mpio'].'</td>
+                <td class="datos">'.$aspirante['asp_dir_edo'].'</td>
+                <td class="datos">'.$aspirante['asp_dir_cp'].'</td>
             </tr>
             <tr>
                 <td class="linea"><span>Municipio</span></td>
@@ -130,8 +135,8 @@ $plantilla = '
         <h2>Secundaria de Procedencia</h2>
         <table class="ancho">
             <tr>
-                <td style="width: 30%; text-align: center;">30DST0154F</td>
-                <td style="width: 70%; text-align: center">ESCUELA SECUNDARIA TÉCNICA INDUSTRIAL NO. 154</td>
+                <td style="width: 30%; text-align: center;">'.$aspirante['sec_clave'].'</td>
+                <td style="width: 70%; text-align: center">'.$aspirante['sec_nombre'].'</td>
             </tr>
             <tr>
                 <td style="width: 30%;" class="linea"><span>Clave</span></td>
@@ -140,9 +145,9 @@ $plantilla = '
         </table>
         <table class="ancho">
             <tr>
-                <td class="datos">SECUNDARIA TÉCNICA</td>
-                <td class="datos">FEDERAL</td>
-                <td class="datos">JUAN LOPEZ GARCÍA</td>
+                <td class="datos">'.$tipoesc.'</td>
+                <td class="datos">'.$tiposost.'</td>
+                <td class="datos">'.$aspirante['sec_dir'].'</td>
             </tr>
             <tr>
                 <td class="linea"><span>Tipo</span></td>

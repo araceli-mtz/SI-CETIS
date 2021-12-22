@@ -52,7 +52,7 @@ include 'includes/templates/header.php';
             <button class="inc-font font-modifier" onclick="increaseFont()">Aa+</button>
             <button class="dec-font font-modifier" onclick="decreaseFont()">Aa-</button>
           </div>
-
+          
           <!-- News content -->
           <div class="row" id="news">
             <!-- information -->
@@ -61,6 +61,9 @@ include 'includes/templates/header.php';
                 <h3 style="text-align:justify;">Justificación de la carrera</h3>
                 <p style="text-align:justify;"><?php echo $especialidad2['esp_descripcion']; ?></p>
               </div>
+
+              <iframe frameborder="0" height="430" src="<?php echo 'pdf/'.$especialidad2['esp_id'].'.pdf'?>" width="100%"></iframe>
+      
             </div>
 
             <!-- meta data -->
@@ -71,7 +74,7 @@ include 'includes/templates/header.php';
                   <img src="img/<?php echo $especialidad2['esp_id'];?>.jpg" style="max-width: 295px;"alt="">
                   <dt><br><br></dt>
                   <dt><span class="icon-font-user"></span>Autor:</dt>
-                  <dd>Araceli Martínez Luna</dd>
+                  <dd>Autor</dd>
 
                   <dt><span class="icon-font-calendar-o"></span>Fecha de publicación:</dt>
                   <dd>10 de enero de 2019</dd>
@@ -83,7 +86,8 @@ include 'includes/templates/header.php';
 
               <div class="text-center top-buffer">
                 <h5>Archivo de plan de estudios</h5>
-                <a type="button" class="btn btn-primary" href="#">
+
+                <a type="button" class="btn btn-primary" href="<?php echo 'pdf/'.$especialidad2['esp_id'].'-Plan.pdf'?>" download="<?php echo $especialidad2['esp_nombre']; ?>">
                   <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
                   Descargar plan de estudio
                 </a>

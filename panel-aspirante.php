@@ -2,6 +2,7 @@
   include 'includes/funciones/sesion_asp.php';
   include 'includes/templates/header.php';
   //include 'includes/funciones/bd_conexion.php';
+  $usuario =  $_SESSION['usuario'] ;
 ?>
 
 <body>
@@ -25,7 +26,7 @@
 				<div class="time text-center">
 					<br>
 						<span class="glyphicon glyphicon-user"></span>
-						Bienvenido(a) <strong><?php echo $_SESSION['nombre']?></strong>
+						Bienvenido(a) <strong><?php echo $_SESSION['nombre'] ?></strong>
 					</span>
 				</div>
 			</div>
@@ -51,9 +52,10 @@
 						</div>
 					</div>
 				</a> 
-				<form role="form" name="ficha-pre" id="ficha-pre" method="POST" action="ficha-preregistro.php">
+				<form role="form" name="ficha-pre" id="ficha-pre" method="POST" action="ficha-preregistro.php" download="Reporte2Mayo2010">
 					<div class="module-btn text-center">
 						<div class="col-md-4 col-sm-8 well panel-0">
+							<input type="hidden" name="id_aspirante" value="<?php echo $usuario?>"></input>
 							<button type="submit">
 								<div class="module-content">
 									<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
