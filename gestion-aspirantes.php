@@ -24,6 +24,18 @@
 			</div>
 		</div>
 
+		<?php 
+			try {
+				//Realiza la conexión
+				require_once('includes/funciones/bd_conexion.php');
+				//Consulta especialidades
+				$sql = " SELECT asp_id, usuario_usuario, usuario_nombre, usuario_app, usuario_apm FROM aspirantes INNER JOIN usuarios on asp_id_usuario = usuario_id where aspirantes.estatus = 1 ";
+				$resultado_asp = $conn->query($sql);
+			} catch (\Exception $e) {
+				echo $e->getMessage();
+			}
+		?>
+
 		<div class="row">
 			<div class="col-md-12">
 				<h2> Gestión de Aspirantes </h2>
@@ -42,15 +54,18 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>MALA980928MVZRNR05</td>
-							<td>ARACELI</td>
-							<td>MARTINEZ</td>
-							<td>LUNA</td>
-							<td class="center"><a href="info-aspirante-admon.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-eye-open"></span></button></a></td>
-							<td class="center">REGISTRADO</td>
-						</tr>
+					<?php while($aspirante = $resultado_asp->fetch_assoc() ) {?>
+							<tr>
+								<td><?php echo $aspirante['usuario_usuario'] ?></td>
+								<td><?php echo $aspirante['usuario_nombre'] ?></td>
+								<td><?php echo $aspirante['usuario_app'] ?></td>
+								<td><?php echo $aspirante['usuario_apm'] ?></td>
+								<td class="center"><a href="info-aspirante-admon.php?id=<?php echo $aspirante['asp_id'] ?>"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-eye-open"></span></button></a></td>
+								<td class="center">REGISTRADO</td>
+							</tr>
+							<?php } //while de fetch assoc ?>
 					</tbody>
+						<?php $conn->close(); //Cierra la conexión ?>
 					</table>
               	</div>
 				

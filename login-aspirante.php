@@ -39,7 +39,7 @@
                                 <label class="control-label" for="curp">CURP *:</label>
                                 <div class="input-group">
                                     <span class="input-group-addon icon-font-lock" aria-hidden="true" ></span>
-                                    <input type="text" name="curp" value="" id="curp" placeholder="Ingresa tu CURP" data-validation="required" class="form-control"/>
+                                    <input type="text" name="curp" value="" id="curp" placeholder="Ingresa tu CURP" data-validation="required" maxlength="18" minlength="18" class="form-control"/>
                                 </div> 
                                 
                                 <input type="hidden" name="registro" value="login-asp">

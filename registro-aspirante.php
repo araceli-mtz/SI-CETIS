@@ -214,39 +214,39 @@
                                 <span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
                                 <select id="dom_edo" name="dom_edo" data-validation="required" class="form-control">
                                     <option value="">Selecciona un estado</option>
-                                    <option value="1">Aguascalientes</option>
-                                    <option value="2">Baja California</option>
-                                    <option value="3">Baja California Sur</option>
-                                    <option value="4">Campeche</option>
-                                    <option value="5">Coahuila de Zaragoza</option>
-                                    <option value="6">Colima</option>
-                                    <option value="7">Chiapas</option>
-                                    <option value="8">Chihuahua</option>
-                                    <option value="9">Distrito Federal</option>
-                                    <option value="10">Durango</option>
-                                    <option value="11">Guanajuato</option>
-                                    <option value="12">Guerrero</option>
-                                    <option value="13">Hidalgo</option>
-                                    <option value="14">Jalisco</option>
-                                    <option value="15">México</option>
-                                    <option value="16">Michoacán de Ocampo</option>
-                                    <option value="17">Morelos</option>
-                                    <option value="18">Nayarit</option>
-                                    <option value="19">Nuevo León</option>
-                                    <option value="20">Oaxaca</option>
-                                    <option value="21">Puebla</option>
-                                    <option value="22">Querétaro</op    tion>
-                                    <option value="23">Quintana Roo</option>
-                                    <option value="24">San Luis Potosí</option>
-                                    <option value="25">Sinaloa</option>
-                                    <option value="26">Sonora</option>
-                                    <option value="27">Tabasco</option>
-                                    <option value="28">Tamaulipas</option>
-                                    <option value="29">Tlaxcala</option>
-                                    <option value="30">Veracruz de Ignacio de la Llave</option>
-                                    <option value="31">Yucatán</option>
-                                    <option value="32">Zacatecas</option>
-                                    <option value="33">Otro</option>       
+                                    <option value="AGUASCALIENTES">Aguascalientes</option>
+                                    <option value="BAJA CALIFORNIA">Baja California</option>
+                                    <option value="BAJA CALIFORNIA SUR">Baja California Sur</option>
+                                    <option value="CAMPECHE">Campeche</option>
+                                    <option value="COAHUILA DE ZARAGOZA">Coahuila de Zaragoza</option>
+                                    <option value="COLIMA">Colima</option>
+                                    <option value="CHIAPAS">Chiapas</option>
+                                    <option value="CHIHUAHUA">Chihuahua</option>
+                                    <option value="DISTRITO FEDERAL">Distrito Federal</option>
+                                    <option value="DURANGO">Durango</option>
+                                    <option value="GUANAJUATO">Guanajuato</option>
+                                    <option value="GUERRERO">Guerrero</option>
+                                    <option value="HIDALGO">Hidalgo</option>
+                                    <option value="JALISCO">Jalisco</option>
+                                    <option value="MEXICO">México</option>
+                                    <option value="MICHOACAN DE OCAMPO">Michoacán de Ocampo</option>
+                                    <option value="MORELOS">Morelos</option>
+                                    <option value="NAYARIT">Nayarit</option>
+                                    <option value="NUEVO LEON">Nuevo León</option>
+                                    <option value="OAXACA">Oaxaca</option>
+                                    <option value="PUEBLA">Puebla</option>
+                                    <option value="QUERETARO">Querétaro</op    tion>
+                                    <option value="QUINTANA ROO">Quintana Roo</option>
+                                    <option value="SAN LUIS POTOSI">San Luis Potosí</option>
+                                    <option value="SINALOA">Sinaloa</option>
+                                    <option value="SONORA">Sonora</option>
+                                    <option value="TABASCO">Tabasco</option>
+                                    <option value="TAMAULIPAS">Tamaulipas</option>
+                                    <option value="TLAXCALA">Tlaxcala</option>
+                                    <option value="VERACRUZ DE IGNACIO DE LA LLAVE">Veracruz de Ignacio de la Llave</option>
+                                    <option value="YUCATAN">Yucatán</option>
+                                    <option value="ZACATECAS">Zacatecas</option>
+                                    <option value="OTRO">Otro</option>       
                                 </select>
                             </div>
                         </div>
@@ -255,12 +255,9 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="control-label" for="dom_mpio">Municipio*:</label>
-                                <div class="input-group">
-                                <span class="input-group-addon icon-font-location-arrow" aria-hidden="true"></span>
-                                <select id="dom_mpio" name="dom_mpio" data-validation="required" class="form-control">
-                                    <option value="">Ingrese su código postal</option>
-                                    <option value="1">Municipio 1</option>
-                                </select>
+                            <div class="input-group">
+                                <span class="input-group-addon icon-user" aria-hidden="true"></span>
+                                <input type="text" onkeyup="mayus(this);" name="dom_mpio" id="dom_mpio" data-validation="required" placeholder="Ingrese su municipio" maxlength="60" class="form-control"/>
                             </div>
                         </div>
                     </div>
@@ -489,40 +486,40 @@
                         <div class="form-group">
                             <label class="control-label" for="sec_edo">Estado*:</label>
                             <select name="sec_edo" id="sec_edo" data-validation="required" class="form-control">
-                                <option value="">Selecciona un estado</option>
-                                <option value="1">Aguascalientes</option>
-                                <option value="2">Baja California</option>
-                                <option value="3">Baja California Sur</option>
-                                <option value="4">Campeche</option>
-                                <option value="5">Coahuila de Zaragoza</option>
-                                <option value="6">Colima</option>
-                                <option value="7">Chiapas</option>
-                                <option value="8">Chihuahua</option>
-                                <option value="9">Distrito Federal</option>
-                                <option value="10">Durango</option>
-                                <option value="11">Guanajuato</option>
-                                <option value="12">Guerrero</option>
-                                <option value="13">Hidalgo</option>
-                                <option value="14">Jalisco</option>
-                                <option value="15">México</option>
-                                <option value="16">Michoacán de Ocampo</option>
-                                <option value="17">Morelos</option>
-                                <option value="18">Nayarit</option>
-                                <option value="19">Nuevo León</option>
-                                <option value="20">Oaxaca</option>
-                                <option value="21">Puebla</option>
-                                <option value="22">Querétaro</op    tion>
-                                <option value="23">Quintana Roo</option>
-                                <option value="24">San Luis Potosí</option>
-                                <option value="25">Sinaloa</option>
-                                <option value="26">Sonora</option>
-                                <option value="27">Tabasco</option>
-                                <option value="28">Tamaulipas</option>
-                                <option value="29">Tlaxcala</option>
-                                <option value="30">Veracruz de Ignacio de la Llave</option>
-                                <option value="31">Yucatán</option>
-                                <option value="32">Zacatecas</option>
-                                <option value="33">Otro</option>       
+                            <option value="">Selecciona un estado</option>
+                                <option value="AGUASCALIENTES">Aguascalientes</option>
+                                <option value="BAJA CALIFORNIA">Baja California</option>
+                                <option value="BAJA CALIFORNIA SUR">Baja California Sur</option>
+                                <option value="CAMPECHE">Campeche</option>
+                                <option value="COAHUILA DE ZARAGOZA">Coahuila de Zaragoza</option>
+                                <option value="COLIMA">Colima</option>
+                                <option value="CHIAPAS">Chiapas</option>
+                                <option value="CHIHUAHUA">Chihuahua</option>
+                                <option value="DISTRITO FEDERAL">Distrito Federal</option>
+                                <option value="DURANGO">Durango</option>
+                                <option value="GUANAJUATO">Guanajuato</option>
+                                <option value="GUERRERO">Guerrero</option>
+                                <option value="HIDALGO">Hidalgo</option>
+                                <option value="JALISCO">Jalisco</option>
+                                <option value="MEXICO">México</option>
+                                <option value="MICHOACAN DE OCAMPO">Michoacán de Ocampo</option>
+                                <option value="MORELOS">Morelos</option>
+                                <option value="NAYARIT">Nayarit</option>
+                                <option value="NUEVO LEON">Nuevo León</option>
+                                <option value="OAXACA">Oaxaca</option>
+                                <option value="PUEBLA">Puebla</option>
+                                <option value="QUERETARO">Querétaro</op    tion>
+                                <option value="QUINTANA ROO">Quintana Roo</option>
+                                <option value="SAN LUIS POTOSI">San Luis Potosí</option>
+                                <option value="SINALOA">Sinaloa</option>
+                                <option value="SONORA">Sonora</option>
+                                <option value="TABASCO">Tabasco</option>
+                                <option value="TAMAULIPAS">Tamaulipas</option>
+                                <option value="TLAXCALA">Tlaxcala</option>
+                                <option value="VERACRUZ DE IGNACIO DE LA LLAVE">Veracruz de Ignacio de la Llave</option>
+                                <option value="YUCATAN">Yucatán</option>
+                                <option value="ZACATECAS">Zacatecas</option>
+                                <option value="OTRO">Otro</option>     
                             </select>
                         
                         </div>
@@ -531,10 +528,10 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class="control-label" for="sec_mpio">Municipio*:</label>
-                            <select name="sec_mpio" id="sec_mpio" data-validation="required" class="form-control">
-                                <option value="">Selecciona un municipio</option>
-                                <option value="1">Martínez de la Torre</option>       
-                            </select>
+                            <div class="input-group">
+                                <span class="input-group-addon icon-user" aria-hidden="true"></span>
+                                <input type="text" onkeyup="mayus(this);" name="sec_mpio" id="sec_mpio" data-validation="required" placeholder="Ingrese su municipio" maxlength="60" class="form-control"/>
+                            </div>
                         </div>
                     </div>
 

@@ -55,20 +55,46 @@
 					</li>
 				</ol>
 
+				<?php
+				ini_set('date.timezone','America/Mexico_City');
+				$fechaActual = date("Y-m-d", time());
+
+				try {
+					//Realiza la conexión
+					require_once('includes/funciones/bd_conexion.php');
+					//Consulta periodo
+					$sql = " SELECT * FROM periodo ORDER BY id_periodo DESC LIMIT 1 ";
+					$resultado_periodo = $conn->query($sql);
+					$periodo = $resultado_periodo->fetch_assoc();
+
+					$inicio_periodo = $periodo['fecha_inicio'];
+					$fin_periodo = $periodo['fecha_fin'];
+				} catch (\Exception $e) {
+					echo $e->getMessage();
+				}
+				?>
+
 				<h3> <span class="icon-font-check"> Proceso de Registro </span></h3>
 				<hr class="purple"/>
 				<ol class="text-justify">
 					<li>
 						Realizar el pre-registro desde la plataforma en el siguiente enlace:
 						<br>
-						<a type="button" class="btn btn-link" href="registro-aspirante.php" target="_blank">Registro en línea</a>
+						<?php
+							if($fechaActual>$inicio_periodo and $fechaActual<$fin_periodo){
+						?>
+							<a type="button" class="btn btn-link" href="registro-aspirante.php" target="_blank">Registro en línea</a>
+						<?php				
+							}else{
+						?>
+							<a type="button" class="btn btn-link closed" href="#">Registro No disponible</a>
+						<?php
+							}
+						?>
 					</li>
 					<li>
-						Una vez has sido registrado, inicia tu sesión para subir tus documentos desde el menú <strong>Aspirantes -> Acceder como aspirante</strong>.
+						Una vez has sido registrado, inicia tu sesión para descargar tu ficha de Pre Registro accediendo a <strong>Aspirantes -> Acceder como aspirante</strong>.
 						<br><br>
-					</li>
-					<li>
-						Una vez has cumplido con la documentación requerida podrás descargar tu ficha de examen dentro de la plataforma. 
 					</li>
 				</ol>
 				<br>

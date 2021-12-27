@@ -82,7 +82,7 @@ if ($_POST['registro'] == 'nuevo') {
                                 //$respuesta = array('respuesta' => 'no_existe_sec_crear', 'clave' => $sec_clave);
                                 try {
                                     $stmt_sec_nuevo = $conn->prepare("INSERT INTO secundarias (sec_clave, sec_nombre, sec_tipoesc, sec_tiposost, sec_edo, sec_mpio, sec_loc, sec_dir, sec_tel, estatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                                    $stmt_sec_nuevo->bind_param("ssiiiisssi", $sec_clave, $sec_nombre, $sec_tipoesc, $sec_tiposost, $sec_edo, $sec_mpio, $sec_loc, $sec_dir, $sec_tel, $estatus);
+                                    $stmt_sec_nuevo->bind_param("ssiisssssi", $sec_clave, $sec_nombre, $sec_tipoesc, $sec_tiposost, $sec_edo, $sec_mpio, $sec_loc, $sec_dir, $sec_tel, $estatus);
                                     $stmt_sec_nuevo->execute();
                                     if($stmt_sec_nuevo->affected_rows) {
                                         //$respuesta = array('respuesta' => 'secundaria_insertada');
@@ -166,7 +166,7 @@ if ($_POST['registro'] == 'nuevo') {
                     /*Crear Aspirante*/
                     try {
                         $stmt_asp_nuevo = $conn->prepare("INSERT INTO aspirantes (asp_fnac, asp_sexo, asp_correo, asp_tel, asp_cel, asp_dir_cp, asp_dir_edo, asp_dir_mpio, asp_dir_col, asp_dir_calle, asp_dir_num, asp_id_usuario, asp_id_sec, asp_id_tutor, estatus, op1, op2, op3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                        $stmt_asp_nuevo->bind_param("sissssiisssissiiii", $asp_fnac, $asp_sexo, $asp_correo, $asp_tel, $asp_cel, $asp_dir_cp, $asp_dir_edo, $asp_dir_mpio, $asp_dir_col, $asp_dir_calle, $asp_dir_num, $id_insertado, $sec_clave, $tutor_curp, $estatus, $op1, $op2, $op3);
+                        $stmt_asp_nuevo->bind_param("sisssssssssissiiii", $asp_fnac, $asp_sexo, $asp_correo, $asp_tel, $asp_cel, $asp_dir_cp, $asp_dir_edo, $asp_dir_mpio, $asp_dir_col, $asp_dir_calle, $asp_dir_num, $id_insertado, $sec_clave, $tutor_curp, $estatus, $op1, $op2, $op3);
                         $stmt_asp_nuevo->execute();
                         if($stmt_asp_nuevo->affected_rows) {
                             $respuesta = array('respuesta' => 'aspirante_insertado');

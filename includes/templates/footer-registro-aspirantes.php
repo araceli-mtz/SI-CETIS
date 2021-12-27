@@ -38,6 +38,24 @@
                 yearRange: '-80:-10',
             });
         });
+        $gmx(document).ready(function () {
+            // Date calendar initialize
+            $('#date1').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: 'yy-mm-dd',
+                yearRange: '-1:+1',
+            });
+        });
+        $gmx(document).ready(function () {
+            // Date calendar initialize
+            $('#date2').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: 'yy-mm-dd',
+                yearRange: '-1:+1',
+            });
+        });
     </script>
 
 	<!-- Load form JS -->

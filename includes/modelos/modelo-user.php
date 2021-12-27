@@ -73,17 +73,32 @@ if($_POST['registro'] == 'editar'){
     $password_hashed = password_hash($usuario_pass, PASSWORD_BCRYPT, $opciones);
 
     try {
-        $stmt = $conn->prepare("UPDATE usuarios SET usuario_pass = ?, usuario_nombre = ?, usuario_app = ?, usuario_apm = ?, usuario_tipousuario_id = ?, estatus = ?, usuario_editado = NOW() WHERE usuario_id = ? ");
-        $stmt->bind_param("ssssiii", $password_hashed, $usuario_nombre, $usuario_app, $usuario_apm, $usuario_tipousuario_id, $estatus, $usuario_id);
-        $stmt->execute();
-        if($stmt->affected_rows){
-            $respuesta = array(
-                'respuesta' => 'exitoso'
-            );
-        }else{
-            $respuesta = array(
-                'respuesta' => 'error'
-            );
+        if(empty($usuario_pass)){
+            $stmt = $conn->prepare("UPDATE usuarios SET usuario_nombre = ?, usuario_app = ?, usuario_apm = ?, usuario_tipousuario_id = ?, estatus = ?, usuario_editado = NOW() WHERE usuario_id = ? ");
+            $stmt->bind_param("sssiii", $usuario_nombre, $usuario_app, $usuario_apm, $usuario_tipousuario_id, $estatus, $usuario_id);
+            $stmt->execute();
+            if($stmt->affected_rows){
+                $respuesta = array(
+                    'respuesta' => 'exitoso'
+                );
+            }else{
+                $respuesta = array(
+                    'respuesta' => 'error'
+                );
+            }
+        } else {
+            $stmt = $conn->prepare("UPDATE usuarios SET usuario_pass = ?, usuario_nombre = ?, usuario_app = ?, usuario_apm = ?, usuario_tipousuario_id = ?, estatus = ?, usuario_editado = NOW() WHERE usuario_id = ? ");
+            $stmt->bind_param("ssssiii", $password_hashed, $usuario_nombre, $usuario_app, $usuario_apm, $usuario_tipousuario_id, $estatus, $usuario_id);
+            $stmt->execute();
+            if($stmt->affected_rows){
+                $respuesta = array(
+                    'respuesta' => 'exitoso'
+                );
+            }else{
+                $respuesta = array(
+                    'respuesta' => 'error'
+                );
+            }
         }
         $stmt->close();
         $conn->close();
