@@ -74,10 +74,7 @@ include 'includes/templates/header.php';
                   <img src="img/<?php echo $especialidad2['esp_id'];?>.jpg" style="max-width: 295px;"alt="">
                   <dt><br><br></dt>
                   <dt><span class="icon-font-user"></span>Autor:</dt>
-                  <dd>Autor</dd>
-
-                  <dt><span class="icon-font-calendar-o"></span>Fecha de publicación:</dt>
-                  <dd>10 de enero de 2019</dd>
+                  <dd>CETIS 145</dd>
 
                   <dt><span class="icon-font-users-1"></span>Dirigido a:</dt>
                   <dd>Todo público</dd>

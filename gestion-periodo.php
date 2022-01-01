@@ -45,46 +45,115 @@
 
 				<form name="crear-periodo" id="editar-registro" method="POST" action="includes/modelos/modelo-periodo.php">
 				
-				<h4>Periodo de Pre-Registro</h4>
+				<h4>Periodo de Proceso de Admisión</h4>
 				<br>
+
+                <?php
+                    ini_set('date.timezone','America/Mexico_City');
+                    $anio_Actual = date("Y", time());
+                    $siguiente_Anio = $anio_Actual+1;
+
+                    $fechaActual = date("Y-m-d", time());
+                ?>
+
 				<div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="control-label" for="date">Fecha de Inicio*:</label>
-                            <div class="input-group">
-                            <span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
-                            <input type="text" name="fecha-inicio" id="date1" value="<?php echo $periodo['fecha_inicio'];?>" placeholder="Fecha Inicio" data-validation="required date" data-validation-format="yyyy-mm-dd" class="form-control"/>
+                    <?php
+                    if($periodo['fecha_fin']<$fechaActual) {
+                        ?>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label" for="date">Fecha de Inicio*:</label>
+                                <div class="input-group">
+                                <span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
+                                <input type="text" name="fecha-inicio" id="date1" value="" placeholder="Fecha Inicio" data-validation="required date" data-validation-format="yyyy-mm-dd" class="form-control"/>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-					<div class="col-md-4">
-                        <div class="form-group">
-                            <label class="control-label" for="date">Fecha Fin*:</label>
-                            <div class="input-group">
-                            <span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
-                            <input type="text" name="fecha-fin" id="date2" value="<?php echo $periodo['fecha_fin'];?>" placeholder="Fecha Fin" data-validation="required date" data-validation-format="yyyy-mm-dd" class="form-control"/>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label" for="date">Fecha Fin*:</label>
+                                <div class="input-group">
+                                <span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
+                                <input type="text" name="fecha-fin" id="date2" value="" placeholder="Fecha Fin" data-validation="required date" data-validation-format="yyyy-mm-dd" class="form-control"/>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-					<div class="col-md-4"> </div>
-                </div>
-
-                    <!-- BOTONES -->
-                    <div class="row">
-                        <div class="col-md-12"><hr></div>
-                    </div>
-
-                    <div class="clearfix col-md-12">
-                        <div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
-                        <div class="pull-right">
-                            <a href="panel-administrador.php"><button type="button" class="btn btn-default" role="button" aria-label="bottón Atras">Cancelar</button></a>
-                            <button type="submit" class="btn btn-primary" role="button" aria-label="bottón Siguiente">Actualizar</button>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label" for="date">Ciclo Escolar*:</label>
+                                <div class="input-group">
+                                <span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
+                                <input type="text" name="ciclo" value="<?php echo $anio_Actual.'-'.$siguiente_Anio?>" data-validation="required date" class="form-control"/>
+                                </div>
+                            </div>
                         </div>
-						<input type="hidden" name="registro" value="editar">
-						<input type="hidden" name="id_periodo" value="<?php echo $periodo['id_periodo'];?>">
-                    </div>
+
+                        <!-- BOTONES -->
+                        <div class="row">
+                            <div class="col-md-12"><hr></div>
+                        </div>
+
+                        <div class="clearfix col-md-12">
+                            <div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
+                            <div class="pull-right">
+                                <a href="panel-administrador.php"><button type="button" class="btn btn-default" role="button" aria-label="bottón Atras">Cancelar</button></a>
+                                <button type="submit" class="btn btn-primary" role="button" aria-label="bottón Siguiente">Establecer Periodo</button>
+                            </div>
+                            <input type="hidden" name="registro" value="crear">
+                            <input type="hidden" name="id_periodo" value="<?php echo $periodo['id_periodo'];?>">
+                        </div>
+                        <?php
+                    } else {
+                        ?>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label" for="date">Fecha de Inicio*:</label>
+                                <div class="input-group">
+                                <span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
+                                <input type="text" name="fecha-inicio" id="date1" value="<?php echo $periodo['fecha_inicio'];?>" placeholder="Fecha Inicio" data-validation="required date" data-validation-format="yyyy-mm-dd" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label" for="date">Fecha Fin*:</label>
+                                <div class="input-group">
+                                <span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
+                                <input type="text" name="fecha-fin" id="date2" value="<?php echo $periodo['fecha_fin'];?>" placeholder="Fecha Fin" data-validation="required date" data-validation-format="yyyy-mm-dd" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label" for="date">Ciclo Escolar*:</label>
+                                <div class="input-group">
+                                <span class="input-group-addon icon-font-calendar-o" aria-hidden="true" ></span>
+                                <input type="text" name="ciclo" value="<?php echo $anio_Actual.'-'.$siguiente_Anio?>" data-validation="required date" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BOTONES -->
+                        <div class="row">
+                            <div class="col-md-12"><hr></div>
+                        </div>
+
+                        <div class="clearfix col-md-12">
+                            <div class="pull-left text-muted text-vertical-align-button">* Campos obligatorios</div>
+                            <div class="pull-right">
+                                <a href="panel-administrador.php"><button type="button" class="btn btn-default" role="button" aria-label="bottón Atras">Cancelar</button></a>
+                                <button type="submit" class="btn btn-primary" role="button" aria-label="bottón Siguiente">Actualizar</button>
+                            </div>
+                            <input type="hidden" name="registro" value="editar">
+                            <input type="hidden" name="id_periodo" value="<?php echo $periodo['id_periodo'];?>">
+                        </div>
+                    <?php
+                    }
+                    ?>
 
                 </form>
 			</div>

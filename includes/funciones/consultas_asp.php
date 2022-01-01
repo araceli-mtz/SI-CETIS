@@ -17,7 +17,7 @@ WHERE usuario_usuario = '$usuario' ";
 $asp_detalle = $conn->query($sql_asp);
 $aspirante = $asp_detalle->fetch_assoc();
 
-$date =$aspirante['fecha_registro'];
+$date = $aspirante['fecha_registro'];
 
 $asp_op1 = $aspirante['op1'];
 $asp_op2 = $aspirante['op2'];

@@ -43,7 +43,17 @@
 					<div class="module-content">
 						<span class="icon-user" aria-hidden="true"></span>
 						<br><br>
-						<h5>Gestión de Aspirantes</h5>
+						<h5>Verificar Información de Aspirantes</h5>
+					</div>
+				</div>
+			</a> 
+
+			<a href="gestion-fichas-aspirantes.php"  class="module-btn text-center">
+				<div class="col-md-4 col-sm-8 well panel-0">
+					<div class="module-content">
+						<span class="icon-user" aria-hidden="true"></span>
+						<br><br>
+						<h5>Generar Ficha Examen</h5>
 					</div>
 				</div>
 			</a> 

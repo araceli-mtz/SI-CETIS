@@ -93,6 +93,35 @@ $('.borrar_registro').on('click', function(e) {
     })
 });
 
+// Actualizar Estatus
+$('.actualizar_registro').on('click', function(e) {
+    e.preventDefault();
+    var id = $(this).attr('data-id');
+    var tipo = $(this).attr('data-tipo');
+    
+    $.ajax({
+        type: 'post',
+        data: {
+            id: id,
+            registro: 'actualizar_estatus'
+        },
+        url: 'includes/modelos/modelo-' + tipo + '.php',
+        success: function(data) {
+            console.log(data);
+            var resultado = JSON.parse(data);
+            if (resultado.respuesta == 'exitoso') {
+                //jQuery('[data-id="' + resultado.id_eliminado + '"]').parents('tr').remove();
+                alert("Si");
+                setTimeout(function() {
+                    location.reload();
+                }, 200);
+            } else {
+                
+            }
+        }
+    })
+});
+
 //Login
 $('#login').on('submit', function(e) {
     e.preventDefault();

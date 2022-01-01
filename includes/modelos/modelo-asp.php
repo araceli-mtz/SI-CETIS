@@ -45,6 +45,7 @@ if ($_POST['registro'] == 'nuevo') {
     $op3 = $_POST['esp_op3'];
 
     $estatus = 1;
+    $estatus_proceso = 1;
 
     /*Verificar si existe registro de aspirante*/
     $stmt_asp = $conn->prepare("SELECT usuario_usuario FROM usuarios where usuario_usuario = '$asp_curp' ");
@@ -165,8 +166,8 @@ if ($_POST['registro'] == 'nuevo') {
 
                     /*Crear Aspirante*/
                     try {
-                        $stmt_asp_nuevo = $conn->prepare("INSERT INTO aspirantes (asp_fnac, asp_sexo, asp_correo, asp_tel, asp_cel, asp_dir_cp, asp_dir_edo, asp_dir_mpio, asp_dir_col, asp_dir_calle, asp_dir_num, asp_id_usuario, asp_id_sec, asp_id_tutor, estatus, op1, op2, op3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                        $stmt_asp_nuevo->bind_param("sisssssssssissiiii", $asp_fnac, $asp_sexo, $asp_correo, $asp_tel, $asp_cel, $asp_dir_cp, $asp_dir_edo, $asp_dir_mpio, $asp_dir_col, $asp_dir_calle, $asp_dir_num, $id_insertado, $sec_clave, $tutor_curp, $estatus, $op1, $op2, $op3);
+                        $stmt_asp_nuevo = $conn->prepare("INSERT INTO aspirantes (asp_fnac, asp_sexo, asp_correo, asp_tel, asp_cel, asp_dir_cp, asp_dir_edo, asp_dir_mpio, asp_dir_col, asp_dir_calle, asp_dir_num, asp_id_usuario, asp_id_sec, asp_id_tutor, estatus, op1, op2, op3, estatus_proceso) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                        $stmt_asp_nuevo->bind_param("sisssssssssissiiiii", $asp_fnac, $asp_sexo, $asp_correo, $asp_tel, $asp_cel, $asp_dir_cp, $asp_dir_edo, $asp_dir_mpio, $asp_dir_col, $asp_dir_calle, $asp_dir_num, $id_insertado, $sec_clave, $tutor_curp, $estatus, $op1, $op2, $op3, $estatus_proceso);
                         $stmt_asp_nuevo->execute();
                         if($stmt_asp_nuevo->affected_rows) {
                             $respuesta = array('respuesta' => 'aspirante_insertado');
@@ -196,5 +197,143 @@ if ($_POST['registro'] == 'nuevo') {
         $conn->close();
     }
 
+    die(json_encode($respuesta));
+}
+
+if ($_POST['registro'] == 'actualizar'){
+    //die(json_encode($_POST));
+    $asp_curp = $_POST['asp_curp'];
+    $asp_nombre = $_POST['asp_nombre'];
+    $asp_app = $_POST['asp_apm'];
+    $asp_apm = $_POST['asp_app'];
+
+    $asp_id = $_POST['asp_id'];
+    $asp_fnac = $_POST['date'];
+    $asp_sexo = $_POST['asp_sexo'];
+    $asp_correo = $_POST['asp_correo'];
+    $asp_tel = $_POST['asp_tel_fijo'];
+    $asp_cel = $_POST['asp_tel_movil'];
+    $asp_dir_cp = $_POST['dom_cp'];
+    $asp_dir_edo = $_POST['dom_edo'];
+    $asp_dir_mpio = $_POST['dom_mpio'];
+    $asp_dir_col = $_POST['dom_col'];
+    $asp_dir_calle = $_POST['dom_calle'];
+    $asp_dir_num = $_POST['dom_num'];
+    $estatus_proceso = 2;
+    
+
+    try {
+        $stmt = $conn->prepare("UPDATE usuarios SET usuario_nombre = ?, usuario_app = ?, usuario_apm = ?, usuario_editado = NOW() WHERE usuario_usuario = ? ");
+        $stmt->bind_param("ssss", $asp_nombre, $asp_apm, $asp_app, $asp_curp);
+        $stmt->execute();
+        if($stmt->affected_rows){
+            /*Edita Info Aspirante */
+            try {
+                $stmt1 = $conn->prepare("UPDATE aspirantes SET asp_fnac = ?, asp_sexo = ?, asp_correo = ?, asp_tel = ?, asp_cel = ?, asp_dir_cp = ?, asp_dir_edo = ?, asp_dir_mpio = ?, asp_dir_col = ?, asp_dir_calle = ?, asp_dir_num = ?, estatus_proceso = ?  WHERE asp_id = ? ");
+                $stmt1->bind_param("sssssssssssii", $asp_fnac, $asp_sexo, $asp_correo, $asp_tel, $asp_cel, $asp_dir_cp, $asp_dir_edo, $asp_dir_mpio, $asp_dir_col, $asp_dir_calle, $asp_dir_num, $estatus_proceso, $asp_id);
+                $stmt1->execute();
+                if($stmt1->affected_rows){
+                    /*Edita Info Aspirante */
+                    $respuesta = array('respuesta' => 'aspirante_verificado');
+                }else{
+                    $respuesta = array(
+                        'respuesta' => 'error'
+                    );
+                }
+            } catch (Exception $e) {
+                $respuesta = array(
+                    'respuesta' => $e->getMessage()
+                );
+            }
+        }else{
+            $respuesta = array(
+                'respuesta' => 'error'
+            );
+        }
+        $stmt->close();
+        $conn->close();
+    } catch (Exception $e) {
+        $respuesta = array(
+            'respuesta' => $e->getMessage()
+        );
+    }
+    die(json_encode($respuesta));
+
+}
+
+if ($_POST['registro'] == 'actualizar_estatus'){
+    //die(json_encode($_POST));
+    $asp_id = $_POST['id'];
+    $estatus_proceso = 3;
+
+    try {
+        $stmt = $conn->prepare("UPDATE aspirantes SET estatus_proceso = ? WHERE asp_id = ? ");
+        $stmt->bind_param("ii", $estatus_proceso, $asp_id,);
+        $stmt->execute();
+        if($stmt->affected_rows){
+            //$respuesta = array('respuesta' => 'exitoso'); 
+            try {
+                //Folio anterior
+                $stmt_ultimaficha = $conn->prepare("SELECT no_ficha FROM fichas ORDER BY id_ficha DESC LIMIT 1");
+                $stmt_ultimaficha->execute();
+                $stmt_ultimaficha->bind_result($ultima_ficha);
+                $stmt_ultimaficha->fetch();
+                $ultima_ficha1 = intval($ultima_ficha);
+                $stmt_ultimaficha->close();
+
+                //Aula anterior
+                $stmt_ultima_aula = $conn->prepare("SELECT aula FROM fichas ORDER BY id_ficha DESC LIMIT 1");
+                $stmt_ultima_aula->execute();
+                $stmt_ultima_aula->bind_result($ultima_aula);
+                $stmt_ultima_aula->fetch();
+                $ultima_aula1 = intval($ultima_aula);
+                $stmt_ultima_aula->close();
+
+                //Definir numero de alumnos por aula
+                if($ultima_ficha1 % 40 == 0){
+                    $sig_aula = $ultima_aula1+1;
+                }else{
+                    $sig_aula = $ultima_aula1;
+                }
+                
+
+                if(isset($ultima_ficha1)){
+                    $sig_ficha = $ultima_ficha1+1;
+                    
+                    try {
+                        $stmt_ficha = $conn->prepare("INSERT INTO fichas (no_ficha, asp_id, aula) VALUES (?, ?, ?)");
+                        $stmt_ficha->bind_param("iii",$sig_ficha, $asp_id, $sig_aula);
+                        $stmt_ficha->execute();
+                        if($stmt_ficha->affected_rows) {
+                            $respuesta = array('respuesta' => 'exitoso'); 
+                        } else {
+                            $respuesta = array(
+                                'respuesta' => 'error'
+                            );
+                        }
+                        $stmt_ficha->close();
+                    } catch (Exception $e) {
+                        $respuesta = array(
+                            'respuesta' => $e->getMessage()
+                        );
+                    } 
+                }
+            } catch (Exception $e) {
+                $respuesta = array(
+                    'respuesta' => $e->getMessage()
+                );
+            }  
+        }else{
+            $respuesta = array(
+                'respuesta' => 'error'
+            );
+        }
+        $stmt->close();
+        $conn->close();
+    } catch (Exception $e) {
+        $respuesta = array(
+            'respuesta' => $e->getMessage()
+        );
+    }
     die(json_encode($respuesta));
 }
