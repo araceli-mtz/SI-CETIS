@@ -67,7 +67,7 @@
 				</div>
 			</a>
 
-			<a href="gestion-pago.php"  class="module-btn text-center">
+			<a href="gestion-pagos.php"  class="module-btn text-center">
 				<div class="col-md-4 col-sm-8 well panel-0">
 					<div class="module-content">
 						<span class="icon-calendar" aria-hidden="true"></span>

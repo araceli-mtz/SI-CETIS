@@ -38,43 +38,34 @@
 
 			<!--Menú-->
 			<div class="col-md-12">
-			<a href="gestion-aspirantes.php"  class="module-btn text-center">
-				<div class="col-md-4 col-sm-8 well panel-0">
-					<div class="module-content">
-						<span class="icon-user" aria-hidden="true"></span>
-						<br><br>
-						<h5>Verificar Información de Aspirantes</h5>
+				<a href="gestion-aspirantes.php"  class="module-btn text-center">
+					<div class="col-md-4 col-sm-8 well panel-0">
+						<div class="module-content">
+							<span class="icon-user" aria-hidden="true"></span>
+							<br><br>
+							<h5>Verificar Información de Aspirantes</h5>
+						</div>
 					</div>
-				</div>
-			</a> 
+				</a> 
 
-			<a href="gestion-fichas-aspirantes.php"  class="module-btn text-center">
-				<div class="col-md-4 col-sm-8 well panel-0">
-					<div class="module-content">
-						<span class="icon-user" aria-hidden="true"></span>
-						<br><br>
-						<h5>Generar Ficha Examen</h5>
+				<a href="gestion-fichas-aspirantes.php"  class="module-btn text-center">
+					<div class="col-md-4 col-sm-8 well panel-0">
+						<div class="module-content">
+							<span class="icon-user" aria-hidden="true"></span>
+							<br><br>
+							<h5>Generar Ficha Examen</h5>
+						</div>
 					</div>
-				</div>
-			</a> 
+				</a> 
 
-			<a href="#"  class="module-btn text-center">
-				<div class="col-md-4 col-sm-8 well panel-0">
-					<div class="module-content">
-						<span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
-						<h5>Reportes de Datos</h5>
+				<a href="#"  class="module-btn text-center">
+					<div class="col-md-4 col-sm-8 well panel-0">
+						<div class="module-content">
+							<span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+							<h5>Reportes de Datos</h5>
+						</div>
 					</div>
-				</div>
-			</a>
-
-			<a href="#"  class="module-btn text-center">
-				<div class="col-md-4 col-sm-8 well panel-0">
-					<div class="module-content">
-						<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-						<h5>Ajustes</h5>
-					</div>
-				</div>
-			</a>
+				</a>
 			</div>
 			<!--
 			<a href="#"  class="module-btn text-center">
